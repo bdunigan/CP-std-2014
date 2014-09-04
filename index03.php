@@ -14,8 +14,8 @@
 	
 	// list of frame sizes ---- This is where you input the name of the save the date
 	$frame_sizes = array(
-		'4.25x5.75'	=>	'Elegant Photo Portrait;',
-		'5.75x4.25'	=>	'Elegant Photo Landscape;'
+		'4.25x5.75'	=>	'Ornate Photo Portrait;',
+		'5.75x4.25'	=>	'Ornate Photo Landscape;'
 	);
 	
 	// default values
@@ -36,8 +36,8 @@
 
 	// CP Variables -----------------------------------------
     // This is where you put the name of the correct folder with the files and images
-	$images_folder = '/frame02/web/';
-	$printimages_folder = 'images/frame02/print/';
+	$images_folder = '/frame03/web/';
+	$printimages_folder = 'images/frame03/print/';
 
 	// checking user input
 	foreach ($default as $k=>$v){
@@ -290,7 +290,8 @@
 				<?php include 'newincludes/select-name1.php';?>
 				<?php include 'newincludes/select-name2.php';?>
 				<?php include 'newincludes/select-date.php';?>
-				<?php include 'newincludes/select-ink-color.php';?>
+				<?php include 'newincludes/select-location.php';?>
+				<?php include 'newincludes/select-accent-color.php';?>
 				<!--<?php include 'newincludes/select-location.php';?>-->
 				<!--<<?php include 'newincludes/select-stripe-color.php';?>-->
 
