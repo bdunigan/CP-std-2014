@@ -14,7 +14,7 @@
 	
 	// list of frame sizes ---- This is where you input the name of the save the date
 	$frame_sizes = array(
-		'4.25x5.75'	=>	'Color Stripe Portrait;',
+		'4.25x5.75'	=>	'Andy;',
 		'5.75x4.25'	=>	'Color Stripe Landscape;'
 	);
 	
