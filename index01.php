@@ -280,6 +280,9 @@
 <!--////////////////////////////////////////////////New Save the Date Dropdowns////////////////////////////////////////-->
 
 				<?php include 'newincludes/select-name1.php';?>
+				<?php include 'newincludes/select-name2.php';?>
+				<?php include 'newincludes/select-date.php';?>
+				<?php include 'newincludes/select-location.php';?>
 				<?php include 'newincludes/select-stripe-color.php';?>
 
 
