@@ -14,7 +14,7 @@
 	
 	// list of frame sizes ---- This is where you input the name of the save the date
 	$frame_sizes = array(
-		'4.25x5.75'	=>	'Andy;',
+		'4.25x5.75'	=>	'Color Stripe Portrait;',
 		'5.75x4.25'	=>	'Color Stripe Landscape;'
 	);
 	
@@ -279,7 +279,7 @@
 
 <!--////////////////////////////////////////////////New Save the Date Dropdowns////////////////////////////////////////-->
 
-
+				<?php include 'newincludes/select-name1.php';?>
 				<?php include 'newincludes/select-stripe-color.php';?>
 
 
