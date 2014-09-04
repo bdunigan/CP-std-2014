@@ -1,0 +1,63 @@
+/* this is for testing only, use your default font styles */
+* {font-family:Calibri, Arial;
+	font-size:medium;}
+	
+#pfapp_container {width:750px;}
+	
+#pfapp_picture_div {width:360px;
+	padding:5px;
+	float:left;
+	margin-right:15px;}
+	
+#pfapp_form_div, #pfapp_form_div-next {width:350px;
+	float:left;}
+
+#pfapp_drag_container {position:absolute;
+	top:-1000px;
+	left:-1000px;
+	height:2000px;
+	width:2000px;
+	display:none;}
+	
+#pfapp_frame_title {font-weight:normal; font-size:12px;
+	text-align:center;}
+
+#pfapp_picture_holder {overflow:hidden;
+	position:relative;
+	margin:auto;}
+	
+#pfapp_picture_holder .picture_frame {position:absolute;
+	cursor:move;
+	margin:0px;}
+#pfapp_picture_holder .user_photo {position:absolute;}
+
+#pfapp_photo_tools {margin-top:15px;}
+	
+#pfapp_form_div select, .input, #pfapp_form_div-next select {width:80%;}
+
+#pfapp_form_div .half, #pfapp_form_div-next .half {width:46%;}
+#pfapp_form_div label.small, #pfapp_form_div-next label.small {width:48%;
+	display:inline-block;
+	font-weight:normal;}
+	
+#pfapp_dpi_warning {font-weight:bold;
+	color:#cc0000;
+	display:none;}
+
+#pfapp_loading_bar {font-size:small;
+	height:32px;
+	color:#666666;
+	background:url(../images/loading_bar.gif) center left no-repeat;
+	padding-left:225px;
+	display:none;}
+	
+#pfapp_loading_wait {color:#666666;
+	font-size:small;
+	display:none;}
+	
+#pfapp_form_div label, , #pfapp_form_div-next label {font-weight:bold;}
+#pfapp_form_div .small, #pfapp_form_div-next .small {color:#666666;
+	font-size:small;
+	font-weight:normal;}
+	
+#pfapp_form_div .field, #pfapp_form_div-next .field {margin: 5px 0px 20px 0;}
