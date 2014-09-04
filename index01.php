@@ -12,14 +12,14 @@
 	// error messages
 	$errs = '';
 	
-	// list of frame sizes
+	// list of frame sizes ---- This is where you input the name of the save the date
 	$frame_sizes = array(
-		'4.25x5.75'	=>	'Portrait;',
-		'5.75x4.25'	=>	'Landscape;'
+		'4.25x5.75'	=>	'Color Stripe Portrait;',
+		'5.75x4.25'	=>	'Color Stripe Landscape;'
 	);
 	
 	// default values
-	$default = array(
+	$default = array( 
 		'top'			=>	0,
 		'margintop'		=>	0,
 		'left'			=>	0,
@@ -35,8 +35,9 @@
 	);
 
 	// CP Variables -----------------------------------------
-
+    // This is where you put the name of the correct folder with the files and images
 	$images_folder = '/frame01/web/';
+	$printimages_folder = 'images/frame01/print/';
 
 	// checking user input
 	foreach ($default as $k=>$v){
@@ -273,12 +274,19 @@
 <?php include 'newincludes/meta.php';?>
 <?php include 'newincludes/top.php';?>
 
+<?php include 'newincludes/mid.php';?>
+
 
 <!--////////////////////////////////////////////////New Save the Date Dropdowns////////////////////////////////////////-->
 
 
-				<?php include 'select-stripe-color.php';?>
+				<?php include 'newincludes/select-stripe-color.php';?>
 
+
+
+
+
+<!--END New Dropdowns///////////////////-->
 
 
 <?php include 'newincludes/bottom.php';?>
