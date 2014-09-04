@@ -330,12 +330,4 @@ $.fancybox.open([
 	            		
 	            </div>
 	            <label for="pfapp_frame_size_select" style="display:none;">Frame Size: <span id="pfapp_recommended" class="small"></span></label>
-	            	<div class="field">
-	    <select name="FrameSize" id="pfapp_frame_size_select">
-	       <!-- <option value="none">Select</option>
-	       <?PHP echo printFrameSizesOptions(); ?>-->
-			<option value="4.25x5.75" id="frameA7">A7 PocketFrame</option>
-			<option value="5.75x4.25" id="frameA2">A2 Pocketframe</option>
 
-	    </select>
-	</div>
