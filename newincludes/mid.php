@@ -32,19 +32,6 @@
 	        <div id="pfapp_form_div-next" class="hideDiv">
 	        	<div class="newButton"  id="buttonBack" >Back</div>
 
-	            <div class="field" id="imageapprovebox">
-	            		<input type="checkbox" id="imageapprove" name="imageapprove" value="<?PHP printValue('MatchProof'); ?>"> I approve this image for printing
-	            </div>
+
 
 	            
-		         <div class="field">
-		         	<label>Choose Paper:</label>
-		            <select id="paperSelect" name="PaperSelect" style="width: 200px; margin-left:10px;">
-						<option value="photo-glossy"  id="optionGlossy">Glossy Photo</option>
-						<option value="photo-matte"  id="optionMatt">Matte Photo</option>
-						<option value="white"  id="optionWhite">White</option>
-						<option value="cream"  id="optionCream">Cream</option>
-					</select>
-				<div class="alertText hideDiv" style="margin:10px;">*Print results vary slightly between paper types. If you are considering selecting a different paper than was used for your proof, we strongly recommend ordering another sample first to ensure that you are pleased with the results.</div>
-	
-				</div>

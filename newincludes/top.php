@@ -6,7 +6,6 @@
 //------------Bryans New Script
 $("document").ready(function() {
 
-var selectedSize ='4.25x5.75';
 
 	$("#buttonStart").click(function() {
 		$('#frameTwo').removeClass( "hideDiv" );
@@ -38,6 +37,83 @@ var selectedSize ='4.25x5.75';
 
 	});
 $("#buyProofBtn").click(function() {$('#prooforderinput').attr({value:  'bozo'});	});
+
+
+//Example Select
+    var current_size = $('#pfapp_frame_size_select').val();
+
+
+	function exampleImage() {
+	   if(current_size == "4.25x5.75"){
+				if($('#example-light').is(':checked')) {
+					var alt1 =  $('#example-light').attr('valone');
+					$("#pfapp_photo_frame").attr( "src", alt1 );
+				} 
+				if($('#example-dark').is(':checked')) {
+					var alt1d=  $('#example-dark').attr('valone');
+					$("#pfapp_photo_frame").attr( "src", alt1d);
+				}
+			}if(current_size == "5.75x4.25"){
+				if($('#example-light').is(':checked')) {
+					var alt2 =  $('#example-light').attr('valtwo');
+					$("#pfapp_photo_frame").attr( "src", alt2 );
+				} 
+				if($('#example-dark').is(':checked')) {
+					var alt2d=  $('#example-dark').attr('valtwo');
+					$("#pfapp_photo_frame").attr( "src", alt2d);
+				}			
+			}		             
+	}
+
+setTimeout(function() { exampleImage(); }, 100);
+
+    $('#pfapp_frame_size_select').change(function() {
+		current_size = $(this).val();
+		setTimeout(function() { exampleImage(); }, 10);
+   });
+
+
+	$("#select-example").change(function() {
+		exampleImage();
+	});
+
+//choose paper
+
+
+
+$('#paperSelect').change(function() {
+	var paperSelected = $(this).val();
+		if(paperSelected == 'heavy-white'){
+			$("#variationid").attr( "value", '64885' );
+			$("#proofvariationid").attr( "value", '64899' );
+		}if(paperSelected == 'heavy-cream'){
+			$("#variationid").attr( "value", '64886' );
+			$("#proofvariationid").attr( "value", '64900' );
+		}if(paperSelected == 'crystal'){
+			$("#variationid").attr( "value", '64887' );
+			$("#proofvariationid").attr( "value", '64901' );
+		}if(paperSelected == 'opal'){
+			$("#variationid").attr( "value", '64888' );
+			$("#proofvariationid").attr( "value", '64902' );
+		}if(paperSelected == 'quartz'){
+			$("#variationid").attr( "value", '64889' );
+			$("#proofvariationid").attr( "value", '64903' );
+		}if(paperSelected == 'photo-matte'){
+			$("#variationid").attr( "value", '64890' );
+			$("#proofvariationid").attr( "value", '64904' );
+		}if(paperSelected == 'photo-glossy'){
+			$("#variationid").attr( "value", '64891' )
+			$("#proofvariationid").attr( "value", '64905' );
+		}
+
+
+});
+
+64899
+
+
+
+
 
 
 // Previous Proof
@@ -306,9 +382,9 @@ $.fancybox.open([
 	            <div class="user_photo" id="pfapp_user_photo" style="margin-top:<?PHP echo $_POST['top']; ?>px; margin-left:<?PHP echo $_POST['left']; ?>px; padding-top:<?PHP echo $zm_pt; ?>px; padding-left:<?PHP echo $zm_pl; ?>px;">
 	        	<img src="<?PHP echo $user_photo; ?>" style="margin-top:<?PHP echo $_POST['margintop']; ?>px; margin-left:<?PHP echo $_POST['marginleft']; ?>px;" border="0" alt="" id="pfapp_user_image">
 	            </div>
-	            <img border="0" src="<?PHP echo IMAGESPATH.'/frames/web/'.$_POST['FrameSize'].'.png'; ?>" alt="" class="picture_frame" id="pfapp_photo_frame">
+	            <img border="0" src="<?PHP echo IMAGESPATH.'/frames/web/'.$_POST['FrameSize'] + $example.'.png'; ?>" alt="" class="picture_frame" id="pfapp_photo_frame">
 	        </div>
-	        <div id="pfapp_frame_title"></div>
+	        <div id="pfapp_frame_title" style="display:none;"></div>
 	        <div id="pfapp_photo_tools" style="text-align:center;">
 	        	<div id="pfapp_fit_photo" class="newButton">Fit to Frame</div>
 	        	<div id="pfapp_center_photo" class="newButton">Center Photo</div>
@@ -329,5 +405,5 @@ $.fancybox.open([
 	            		<input type="checkbox" id="matchproof" name="matchproof" value="<?PHP printValue('MatchProof'); ?>"> <a href="#" class="tips tipOne"  title="title">Please use file from previous order </a>
 	            		
 	            </div>
-	            <label for="pfapp_frame_size_select" style="display:none;">Frame Size: <span id="pfapp_recommended" class="small"></span></label>
+	            
 

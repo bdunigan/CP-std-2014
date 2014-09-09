@@ -1,4 +1,7 @@
-
+	            
+	            <div class="field" id="imageapprovebox">
+	            		<input type="checkbox" id="imageapprove" name="imageapprove" value="<?PHP printValue('MatchProof'); ?>"> I approve this image for printing
+	            </div>
 
 				 
 				<div id="personalFields" style="margin-bottom:20px;">
@@ -40,18 +43,16 @@
 	            <input type="hidden" value="Submit" id="pfSubmit" />
 	        </form>
 	        
-
-
-	        <!--FORM 2-->
-	       <form method="post" action="http://www.cardsandpockets.com/a7printedframedphoto.aspx" id="sampleForm" target="sampleBuyiframe">
-						<input name="variationid" type="hidden" id="variationid" value="53387"/>
+	       <!--FORM 2-->
+	       <form method="post" action="http://www.cardsandpockets.com/photosavethedate.aspx" id="sampleForm" target="sampleBuyiframe">
+						<input name="variationid" type="hidden" id="variationid" value="64885"/>
 						<input name="quantity" type="hidden" value="1" maxlength="10" size="3" id="variationqty" /></label>
 				 		<input type="hidden" name="addtocart" id="sampleCart" />
 				</form>	
 
 	        <!--FORM 3-->
-	       <form method="post" action="http://www.cardsandpockets.com/a7printedframedphotoproof.aspx" id="proofForm" target="sampleBuyiframe">
-						<input name="variationid" type="hidden" id="proofvariationid" value="53439"/>
+	       <form method="post" action="http://www.cardsandpockets.com/photosavethedate-sample.aspx" id="proofForm" target="sampleBuyiframe">
+						<input name="variationid" type="hidden" id="proofvariationid" value="64899"/>
 						<input name="quantity" type="hidden" value="1" maxlength="10" size="3"  /></label>
 				 		<input type="hidden" name="addtocart" id="sampleCart" />
 				</form>	
@@ -66,3 +67,5 @@
 
 </body>
 </html>
+
+

@@ -39,6 +39,12 @@
 	$images_folder = '/frame01/web/';
 	$printimages_folder = 'images/frame01/print/';
 
+
+	$alt1 = 'images' . $images_folder . '4.25x5.75.png';
+	$alt2 = 'images' . $images_folder . '5.75x4.25.png';
+	$alt1d = 'images' . $images_folder . '4.25x5.75d.png';
+	$alt2d = 'images' . $images_folder . '5.75x4.25d.png';
+
 	// checking user input
 	foreach ($default as $k=>$v){
 		if (!isset($_POST[$k])) {
@@ -273,26 +279,58 @@
 ?>
 <?php include 'newincludes/meta.php';?>
 <?php include 'newincludes/top.php';?>
+
 <div class="field">
-	    <select name="FrameSize" id="pfapp_frame_size_select">
-	       <!-- <option value="none">Select</option>
-	       <?PHP echo printFrameSizesOptions(); ?>-->
-			<option value="4.25x5.75" id="frameA7">A7 PocketFrame</option>
-			<option value="5.75x4.25" id="frameA2">A2 Pocketframe</option>
-
-	    </select>
+	<label for="pfapp_frame_size_select" style="display:none;">Frame Size: <span id="pfapp_recommended" class="small"></span></label>
+	<?php include 'newincludes/size-select.php';?>
 	</div>
-<?php include 'newincludes/mid.php';?>
 
+<div class="field" id="select-example">
+	<label for="select-example" >Example Shown: <br/></label>
+
+	<input type="radio" name="example" valone="<?php echo $alt1;?>" valtwo="<?php echo $alt2;?>" id="example-light"  >Light Example<br>
+	<input type="radio" name="example" valone="<?php echo $alt1d;?>" valtwo="<?php echo $alt2d;?>" id="example-dark" checked="checked" >Dark Example
+
+</div>
+
+<?php include 'newincludes/mid.php';?>
+<div class=""><?php include 'newincludes/select-card-type.php';?></div>
+<div class=""><?php include 'newincludes/select-paper.php';?></div>				
+<div class=""><?php include 'newincludes/select-envelope.php';?></div>				
+<div class=""><?php include 'newincludes/select-name1.php';?></div>
+<div class=""><?php include 'newincludes/select-name2.php';?></div>
+<div class=""><?php include 'newincludes/select-date.php';?></div>
 
 <!--////////////////////////////////////////////////New Save the Date Dropdowns////////////////////////////////////////-->
 
-				<?php include 'newincludes/select-name1.php';?>
-				<?php include 'newincludes/select-name2.php';?>
-				<?php include 'newincludes/select-date.php';?>
-				<?php include 'newincludes/select-location.php';?>
-				<?php include 'newincludes/select-stripe-color.php';?>
+<div class=""><?php include 'newincludes/select-location.php';?></div>
 
+
+	<div class="field"><!--COLOR 1-->
+		<input type="hidden" name="color1-name" id="color1-name" value="Select Stripe Color">
+		<label>Select Stripe Color:  </label>
+		<select  id="color1" name="color1" >
+			<?php include 'newincludes/options-all.php';?>
+		</select>
+	</div>
+
+
+	<div class="field hide"><!--COLOR 2-->
+		<input type="hidden" name="color2-name" id="color2-name" value="-">
+		<label>Select Ink Color:  </label>
+		<select  id="color2" name="color2" >
+			<?php include 'newincludes/options-all.php';?>
+		</select>
+	</div>
+
+
+	<div class="field hide"><!--COLOR 3-->
+		<input type="hidden" name="color3-name" id="color3-name" value="-">
+		<label>Select Ink Color2:  </label>
+		<select  id="color3" name="color3" >
+			<?php include 'newincludes/options-all.php';?>
+		</select>
+	</div>
 
 
 
@@ -300,4 +338,7 @@
 <!--END New Dropdowns///////////////////-->
 
 
+
 <?php include 'newincludes/bottom.php';?>
+
+

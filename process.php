@@ -65,8 +65,8 @@ if ($_SESSION['current_image'] != '') {
 			}
 			
 			// setting the zoom size based on the frame size
-			$pw = $pw * ($_POST['PhotoZoom'] / 100);
-			$ph = $ph * ($_POST['PhotoZoom'] / 100);
+			$pw = $pw * ($_POST['PhotoZoom'] / 50);
+			$ph = $ph * ($_POST['PhotoZoom'] / 50);
 			
 			
 			// inserting the photo
@@ -123,11 +123,18 @@ else{
 	$mail->Body = '<div style="font-family:arial; font-size:9pt;">Generated on '.date('r').'. 
 	<table style="font-family:arial; font-size:9pt;">
 		<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
-		<tr><td>Frame Size:</td><td>'.$frame_sizes[$_POST['FrameSize']].'</td></tr>
+		<tr><td>Layout:</td><td>'.$frame_sizes[$_POST['FrameSize']].'</td></tr>
 		<tr><td>Quantity:</td><td>'.$_POST['qty'].'</td></tr>
 		<tr><td>Paper Select:</td><td>'.$_POST['PaperSelect'].'</td></tr>
-		<tr><td>Paper Select:</td><td>'.$_POST['paper-select2'].'</td></tr>
-		<tr><td>Stripe Color:</td><td>'.$_POST['select-stripe-color'].'</td></tr>
+		<tr><td>Paper Select:</td><td>'.$_POST['select-card-type'].'</td></tr>
+		<tr><td>Paper Select:</td><td>'.$_POST['select-envelope'].'</td></tr>
+		<tr><td>Name 1:</td><td>'.$_POST['name1'].'</td></tr>
+		<tr><td>Name 2:</td><td>'.$_POST['name2'].'</td></tr>
+		<tr><td>Date:</td><td>'.$_POST['date'].'</td></tr>
+		<tr><td>Location:</td><td>'.$_POST['location'].'</td></tr>
+		<tr><td>'.$_POST['color1-name'].':</td><td>'.$_POST['color1'].'</td></tr>
+		<tr><td>'.$_POST['color2-name'].':</td><td>'.$_POST['color2'].'</td></tr>
+		<tr><td>'.$_POST['color3-name'].':</td><td>'.$_POST['color3'].'</td></tr>
 		<tr><td>Order Number:</td><td>'.$_POST['OrderNumber'].'</td></tr>
 		<tr><td>First Name:</td><td>'.$_POST['FirstName'].'</td></tr>
 		<tr><td>Last Name:</td><td>'.$_POST['LastName'].'</td></tr>

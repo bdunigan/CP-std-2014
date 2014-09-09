@@ -1,0 +1,6 @@
+1. Change Title - Update title on line 17 and 18
+2. If lanscape only change line 29 to landscape dimensions
+3. Update images folders on lines 39 and 404.
+4. Change "checked" to correct example default lines 291-293
+5. Hide and unhide color options. Line 309-334
+6. Update values for color options

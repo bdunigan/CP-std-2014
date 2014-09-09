@@ -1,3 +1,3 @@
-<div>
-	<span>Event Date</span><input type="text">
+<div class="field">
+<label>Event Date:   </label><input type="text" id="date" name="date">
 </div>

@@ -1,3 +1,3 @@
-<div>
-	<span>Name 2</span><input type="text">
+<div class="field">
+<label>Name 2:   </label><input type="text" id="name2" name="name2">
 </div>

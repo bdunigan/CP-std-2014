@@ -1,3 +1,3 @@
-<div>
-	<span>City, State</span><input type="text">
+<div class="field">
+<label>City, State:   </label><input type="text" id="location" name="location">
 </div>
