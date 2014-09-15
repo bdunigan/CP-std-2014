@@ -7,7 +7,7 @@
 				<div id="personalFields" style="margin-bottom:20px;">
 
 	            <div id="orderNumber" class="hideDiv field">
-	            <label for="pfapp_order_number"><a href="#" class="tips tipTwo" title="title">Previous Proof Order Number:</a></label>
+	            <label for="pfapp_order_number" style="width:230px;"><a href="#" class="tips tipTwo" title="title">Previous Proof Order Number:</a></label>
 	                <input type="text" name="OrderNumber" id="pfapp_order_number" class="input" value="<?PHP printValue('OrderNumber'); ?>">
 	            </div>
 
@@ -27,7 +27,7 @@
 	            </div>
 
 	            <div id="proofBuyBox">
-			        <div id="buyProofBtn" class="newButton3"> Buy a Single Proof for <span id="samplePrice">$ 3.00</span></div> 
+			        <div id="buyProofBtn" class="newButton3"> Buy a Single Proof for <span id="samplePrice">$ 5.00</span></div> 
 			        <p class="small">----------------------------------- or -----------------------------------</p>
 		   		</div>
 
@@ -58,7 +58,7 @@
 				</form>	
 
 				<iframe  name="sampleBuyiframe" height="100" style="visibility:hidden" scrolling="no" frameborders="0" id="sampleBuyiframe"></iframe>
-	    </div><!--end of form div 2
+	    </div><!--end of form div 2-->
 	</div><!--end of frame one-->
 </div>
 
@@ -66,6 +66,6 @@
 
 
 </body>
-</html>
+</html> 
 
 

@@ -70,12 +70,26 @@ setTimeout(function() { exampleImage(); }, 100);
     $('#pfapp_frame_size_select').change(function() {
 		current_size = $(this).val();
 		setTimeout(function() { exampleImage(); }, 10);
+		if($('#matchproof').is(':checked')) {
+			if(current_size == "4.25x5.75"){
+				$("#sampleImg").removeClass( "hideDiv" );
+				$("#sampleImg2").addClass( "hideDiv" );
+			} if(current_size == "5.75x4.25"){
+				$("#sampleImg2").removeClass( "hideDiv" );
+				$("#sampleImg").addClass( "hideDiv" );
+			}
+		}
    });
 
 
 	$("#select-example").change(function() {
 		exampleImage();
 	});
+
+
+
+
+
 
 //choose paper
 
@@ -109,8 +123,6 @@ $('#paperSelect').change(function() {
 
 });
 
-64899
-
 
 
 
@@ -123,8 +135,14 @@ $('#paperSelect').change(function() {
 			$('#matchproof').attr({value:  '1'});
 			//$('#pfapp_user_image').css({display:  'none'});
 			$('#pfapp_photo_tools').addClass( "hideDiv" );
-			$("#sampleImg").removeClass( "hideDiv" );
+			 if(current_size == "4.25x5.75"){
+				$("#sampleImg").removeClass( "hideDiv" );
+			} if(current_size == "5.75x4.25"){
+				$("#sampleImg2").removeClass( "hideDiv" );
+			}
+			
 			$('#orderNumber').removeClass( "hideDiv" );
+			$('#select-example').addClass( "hide" );
 			$('#imageapprovebox').addClass( "hideDiv" );
 			$('#proofBuyBox').addClass("hideDiv");
 	 		$("#sectionUpload")
@@ -135,8 +153,11 @@ $('#paperSelect').change(function() {
 		} else{
 			$('#matchproof').attr({value:  '0'});
 			$('.alertText').addClass( "hideDiv" );
-			//$('#pfapp_user_image').css({display:  'block'});
-			$("#sampleImg").addClass( "hideDiv" );
+			$('#pfapp_photo_frame').css({top:  '0px'});
+				$("#sampleImg2").addClass( "hideDiv" );
+				$("#sampleImg").addClass( "hideDiv" );
+				$('#select-example').removeClass( "hide" );
+
 			$('#pfapp_photo_tools').removeClass( "hideDiv" );
 			$('#orderNumber').addClass( "hideDiv" );
 			$('#imageapprovebox').removeClass( "hideDiv" );
@@ -151,6 +172,30 @@ $('#paperSelect').change(function() {
 		}
 
 	});
+
+
+//if postcard  
+$( "#select-card-type" ).change(function() {
+	var cardSelection = $(this).val();
+console.log(cardSelection);
+	if(cardSelection == 'Single Sided with Envelope') {
+		$('#env-select').removeClass( "hide" );	
+		$('option:selected', 'select[name="select-envelope"]').removeAttr('selected');
+		$('select[name="select-envelope"]').find('option[name="select"]').attr("selected",true);
+		$('#optionPhotomatte').removeClass( "hide" );
+		$('#optionPhotoglossy').removeClass( "hide" );
+	}else{
+		$('#env-select').addClass( "hide" );
+		$('option:selected', 'select[name="select-envelope"]').removeAttr('selected');
+		$('select[name="select-envelope"]').find('option[name="postcard"]').attr("selected",true);
+
+		$('#optionPhotomatte').addClass( "hide" );
+		$('#optionPhotoglossy').addClass( "hide" );
+	}
+	});
+
+
+
 
 //approval image alert
 	$( "#imageapprove" ).change(function() {
@@ -292,7 +337,11 @@ $.fancybox.open([
 	.hideDiv{display: none;}
 	ul{list-style: none;}
 	.alertText{font-size: 13px; color:#df5a5c;}
+	.alertText2{font-size: 13px; color:#bd8586;}
 	a.tipOne, a.tipTwo{display: inline-block; line-height: 25px; background: url('images/question.gif') no-repeat right; padding-right: 30px; text-decoration: none; color:#000000; border: none !important;}
+	.field label {width: 130px; display: inline-block;}
+	#select-example label{width: 230px; display: block;}
+	#pfapp_range_slider label {width:80%;}
 	.frameOverlay{ position: absolute; z-index: 1; pointer-events: none;}
 	.basicFrame{ background-image: url('images/basic-overlay-a7.png'); width: 360px; height: 504px;}
 	.scallopedFrame{ background-image: url('images/scalloped-overlay-a7.png'); width: 360px; height: 504px;}
@@ -348,7 +397,7 @@ $.fancybox.open([
 		    <span class="newButton3">I Understand</span>
 		</a>
 				<a href="#" class="noproof-agree" >
-		    <span class="newButton2">Buy Single Proof for $3.00</span>
+		    <span class="newButton2">Buy Single Proof for $5.00</span> 
 		</a>
 	</div>
 
@@ -371,12 +420,14 @@ $.fancybox.open([
 <div id="pfapp_container">
 
 	<div id="pfapp_drag_container">&nbsp;</div>
+	<div id="loadingContainer"><img src="images/cart-gif.gif" width="400" height="400" style="display:block; margin:auto;" id="loadingImage" ></div>
 	<div id="frameTwo">
 		<div id="pfapp_picture_div">
 	    	
 	        <div id="pfapp_picture_holder">
 	        	<!--overlay image-->
-	        	<img src="images/previous.jpg" style="margin-top:0px; margin-left:0px; position:relative; z-index:2;" border="0" class="hideDiv" id="sampleImg"/>
+	        	<img src="<?PHP echo $example1; ?>" style="margin-top:0px; margin-left:0px; position:relative; z-index:2;" border="0" class="hideDiv" id="sampleImg"/>
+	        	<img src="<?PHP echo $example2; ?>" style="margin-top:0px; margin-left:0px; position:relative; z-index:2;" border="0" class="hideDiv" id="sampleImg2"/>
 
 
 	            <div class="user_photo" id="pfapp_user_photo" style="margin-top:<?PHP echo $_POST['top']; ?>px; margin-left:<?PHP echo $_POST['left']; ?>px; padding-top:<?PHP echo $zm_pt; ?>px; padding-left:<?PHP echo $zm_pl; ?>px;">
@@ -385,7 +436,7 @@ $.fancybox.open([
 	            <img border="0" src="<?PHP echo IMAGESPATH.'/frames/web/'.$_POST['FrameSize'] + $example.'.png'; ?>" alt="" class="picture_frame" id="pfapp_photo_frame">
 	        </div>
 	        <div id="pfapp_frame_title" style="display:none;"></div>
-	        <div id="pfapp_photo_tools" style="text-align:center;">
+	        <div id="pfapp_photo_tools" style="display:none;">
 	        	<div id="pfapp_fit_photo" class="newButton">Fit to Frame</div>
 	        	<div id="pfapp_center_photo" class="newButton">Center Photo</div>
 	        </div>
@@ -401,6 +452,10 @@ $.fancybox.open([
 	            <input type="hidden" name="margin" id="pfapp_margin_input" value="<?PHP printValue('margin'); ?>">
 	            <input type="hidden" name="prooforder" id="prooforderinput" value="<?PHP printValue('OrderNumber'); ?>">
 
+
+
+		<h3>Hi There</h3>
+		<p>Welcome to this great photo placement uploader, this is a great see how you would want your photo cropped for a save the date</p>
 	            <div class="field">
 	            		<input type="checkbox" id="matchproof" name="matchproof" value="<?PHP printValue('MatchProof'); ?>"> <a href="#" class="tips tipOne"  title="title">Please use file from previous order </a>
 	            		

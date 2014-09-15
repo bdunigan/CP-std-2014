@@ -2,7 +2,7 @@
 <label>Select A2 Envelope</label>
 
 <select id="select-envelope" name="select-envelope">
-											<option value="" selected="selected">Select ...</option>
+											<option value="" selected="selected" name="select">Select ...</option>
 											<option>
 												Adriatic
 											</option><option>
@@ -221,7 +221,7 @@
 												White Frost
 											</option><option>
 												Wild Cherry
-											</option><option>selected="selected">
+											</option><option name="postcard">
 												POSTCARD (no envelope)
 											</option>
 										</select>

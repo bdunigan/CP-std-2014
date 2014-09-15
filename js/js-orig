@@ -1,4 +1,5 @@
-ng.ready(function(){
+ng.ready(function(){ 
+
 	// global picture position to keep track of user drag and drop
 	var user_photo_pos;
 	var please_wait_timer;
@@ -72,108 +73,33 @@ ng.ready(function(){
 			marginLeft:0	
 		});
 	});
-
-//------------Buy Sample Button
-
-ng.get('buyProofBtn').add_event('change', function(evt){
-		var errs = [];
-
-
-		$('#loadingContainer').css({display:  'block'});
-
-		if (ng.get('pfapp_frame_size_select').value == ''){
-			errs.push(' - Frame Size');
-		}
-
-	// --------------BRYAN added validation 		
-	 if (ng.get('matchproof').checked) {
-					if (ng.get('pfapp_order_number').value == ''){
-						errs.push(' - Order Number');	
-					}
-			 } else{
-					if ((ng.get('pfapp_picture_upload').value == '') && (ng.get('pfapp_current_image').value == '')) {
-						errs.push(' - Select a Photo');	
-					}
-					if (ng.get('pfapp_photo_zoom').value == ''){
-						errs.push(' - Photo Zoom');	
-					}else {
-						var val = ng.get('pfapp_photo_zoom').value.to_int();
-						if ((val < 0) || (val > 150)) {
-							errs.push(' - Photo zoom must be between 0% to 105%');		
-						}
-
-					if (ng.get('imageapprove').checked){
-						//do nothing
-					}else{
-						errs.push(' - Approve the image');	
-					}	
-
-					}
-			 };
-
-
-		if (ng.get('pfapp_fname').value == ''){
-			errs.push(' - First Name');	
-		}
-		if (ng.get('pfapp_lname').value == ''){
-			errs.push(' - Last Name');	
-		}
-		if (!ng.Validate.email(ng.get('pfapp_email').value)){
-			errs.push(' - Email');
-		}
-
-		
-		if (errs.length){
-			$('#loadingContainer').css({display:  'none'});
-			alert("The following fields are missing or invalid\n"+errs.join("\n"));
-			evt.stop();	
-		}  else{
-
-		document.forms["proofForm"].submit();
-		$('#loadingImage').attr({src:'images/ps-gif.gif'}).delay( 2000 );	
-
-		$("#sampleBuyiframe").load(function() {	
-				document.forms["pfapp_form"].submit();
-			});
-
-		}
-
-	});
-
-
-
-//--------- form validation
-
 	
-	ng.get('pfSubmit').add_event('change', function(evt){
+
+	//--------- form validation
+	ng.get('buyBtn').add_event('click', function(evt){
 		var errs = [];
+
+		if (ng.get('pfapp_frame_size_select').value == ''){
+			errs.push(' - Frame Size');
+		}
 
 	// --------------BRYAN added validation 		
 	 if (ng.get('matchproof').checked) {
-
 					if (ng.get('pfapp_order_number').value == ''){
 						errs.push(' - Order Number');	
 					}
 			 } else{
-
-
 					if ((ng.get('pfapp_picture_upload').value == '') && (ng.get('pfapp_current_image').value == '')) {
 						errs.push(' - Select a Photo');	
 					}
 					if (ng.get('pfapp_photo_zoom').value == ''){
 						errs.push(' - Photo Zoom');	
-					}else {
+					}
+					else {
 						var val = ng.get('pfapp_photo_zoom').value.to_int();
-						if ((val < 0) || (val > 150)) {
-							errs.push(' - Photo zoom must be between 0% to 105%');		
+						if ((val < 0) || (val > 100)) {
+							errs.push(' - Photo zoom must be between 0% to 100%');		
 						}
-
-					if (ng.get('imageapprove').checked){
-						//do nothing
-					}else{
-						errs.push(' - Approve the image');	
-					}	
-
 					}
 			 };
 
@@ -187,37 +113,37 @@ ng.get('buyProofBtn').add_event('change', function(evt){
 		if (!ng.Validate.email(ng.get('pfapp_email').value)){
 			errs.push(' - Email');
 		}
-
-		if ($( "#pfapp_qty" ).val() < 10 ){
-			errs.push(' - Quantity too small');
-		}
-
-		$('#loadingContainer').css({display:  'block'});
-
-		if (ng.get('pfapp_frame_size_select').value == ''){
-			errs.push(' - Frame Size');
-		}
 		
 		if (errs.length){
-			$('#loadingContainer').css({display:  'none'});
+			
 			alert("The following fields are missing or invalid\n"+errs.join("\n"));
+			$('#loadingContainer').css({display:  'none'});
 			evt.stop();	
 		}  else{
 
 		document.forms["sampleForm"].submit();
-		$('#loadingImage').attr({src:'images/ps-gif.gif'}).delay( 2000 );	
 
-		$("#sampleBuyiframe").load(function() {	
+		window.setTimeout(partB,1000);
+			function partB() {
 				document.forms["pfapp_form"].submit();
-			});
+			}
+
 
 		}
 
 
 
+
+
+
 	});
+//end form validation
 
-
+//--bryan new submit even
+ng.get('pfapp_form').add_event('submit', function(evt){
+		alert("event form submission");
+			  return true;
+		});
 
 
 
@@ -427,7 +353,6 @@ ng.get('buyProofBtn').add_event('change', function(evt){
 		
 		return img_style;
 	};
-
 	
 	function set_frame_size(size, label){
 		if (size == '') return;
@@ -450,12 +375,13 @@ ng.get('buyProofBtn').add_event('change', function(evt){
 		// changing width to pixel
 		w = w * 72;
 		h = h * 72;
+
 		
 		ng.get('pfapp_picture_holder').set_styles({width: w, height:h});
 		ng.get('pfapp_photo_frame').src = frame_images_path+size+'.png';
 		
 		// frame size title
-		ng.get('pfapp_frame_title').set_html(label+' Selected');
+		ng.get('pfapp_frame_title').set_html(label+' Frame');
 		
 		// resizing the photo to get the overall picture size
 		var obj = resize_user_photo(ng.get('pfapp_photo_zoom').value);
@@ -486,4 +412,4 @@ ng.get('buyProofBtn').add_event('change', function(evt){
 			}
 		}
 	};
-}); 
+});

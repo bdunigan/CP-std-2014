@@ -91,7 +91,7 @@ ng.get('buyProofBtn').add_event('change', function(evt){
 					}
 			 } else{
 					if ((ng.get('pfapp_picture_upload').value == '') && (ng.get('pfapp_current_image').value == '')) {
-						errs.push(' - Select a Photo');	
+						errs.push(' - Select a Photo');	 
 					}
 					if (ng.get('pfapp_photo_zoom').value == ''){
 						errs.push(' - Photo Zoom');	

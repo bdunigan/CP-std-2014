@@ -39,7 +39,7 @@ function uploadImage($file){
 	$path = UPLOADSPATH.'/original/';
 	if ($file['name'] != ""){
 		$ext = strtolower(substr($file['name'], strlen($file['name']) - 3));
-		$valid_format = array("jpg", "gif", "png");
+		$valid_format = array("peg", "jpeg","jpg", "gif", "png");
 		
 		if(!in_array($ext, $valid_format)){
 			return array(
@@ -114,7 +114,7 @@ function resizeImage($FileName, $width, $height){
 		$img = imagecreatetruecolor($width, $height);
 		$file_path = UPLOADSPATH.'/original/'.$FileName;
 		$new_file_path = UPLOADSPATH.'/web/'.$new_file;
-		if ($Image_ext == "jpg"){
+		if ($Image_ext == "jpg" || $Image_ext == "peg" || $Image_ext == "jpeg" ){
 			$o_img = imagecreatefromjpeg($file_path);
 		}
 		else if ($Image_ext == "png"){
@@ -127,8 +127,8 @@ function resizeImage($FileName, $width, $height){
 		// resampling the image
 		imagecopyresampled($img, $o_img, 0, 0, 0, 0, $width, $height, $width_orig, $height_orig);
 		
-		// Output
-		if ($Image_ext == "jpg"){
+		// Output 
+		if ($Image_ext == "jpg" || $Image_ext == "peg" || $Image_ext == "jpeg"){
 			imagejpeg($img, $new_file_path, 60);
 		}
 		else if ($Image_ext == "png"){

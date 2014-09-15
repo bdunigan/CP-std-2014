@@ -37,7 +37,8 @@
 
 #pfapp_photo_tools {margin-top:15px;}
 	
-#pfapp_form_div select, .input, #pfapp_form_div-next select {width:80%;}
+/*#pfapp_form_div select, .input, #pfapp_form_div-next select {width:80%;}*/
+.input{width:80%;}
 
 #pfapp_form_div .half, #pfapp_form_div-next .half {width:46%;}
 #pfapp_form_div label.small, #pfapp_form_div-next label.small {width:48%;
