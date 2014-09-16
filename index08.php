@@ -14,8 +14,8 @@
 	
 	// list of frame sizes ---- This is where you input the name of the save the date
 	$frame_sizes = array(
-		'4.25x5.75'	=>	'Ornate Photo Portrait;',
-		'5.75x4.25'	=>	'Ornate Photo Landscape;'
+		'4.25x5.75'	=>	'Kraft Photo Portrait;',
+		'5.75x4.25'	=>	'Kraft Photo Landscape;'
 	);
 	
 	// default values
@@ -37,8 +37,8 @@
 	// CP Variables -----------------------------------------
     // This is where you put the name of the correct folder with the files and images
 
-	$images_folder = '/frame03/web/';
-	$printimages_folder = 'images/frame03/print/';
+	$images_folder = '/frame08/web/';
+	$printimages_folder = 'images/frame08/print/';
 
 
 
@@ -249,7 +249,7 @@
 
 
 <!--////////////// Choose If both layouts///////-->
-<div class="field">
+<div class="hide">
 	<label for="pfapp_frame_size_select">Card Layout: <span id="pfapp_recommended" class="small"></span></label>
 	<?php include 'newincludes/size-select.php';?>
 	</div>
@@ -276,7 +276,7 @@
 
 <!--////////////////////////////////////////////////New Save the Date Dropdowns////////////////////////////////////////-->
 
-<div class=""><?php include 'newincludes/select-location.php';?></div>
+<div class="hide"><?php include 'newincludes/select-location.php';?></div>
 
 
 	<div class="field"><!--COLOR 1-->
@@ -289,8 +289,8 @@
 
 
 	<div class="field"><!--COLOR 2-->
-		<input type="hidden" name="color2-name" id="color2-name" value="Text Color">
-		<label>Select Ink Color:  </label>
+		<input type="hidden" name="color2-name" id="color2-name" value="Select Text Color">
+		<label>Select Text Color:  </label>
 		<select  id="color2" name="color2" >
 			<?php include 'newincludes/options-txt2.php';?>
 		</select>
@@ -299,9 +299,9 @@
 
 	<div class="field hide"><!--COLOR 3-->
 		<input type="hidden" name="color3-name" id="color3-name" value="-">
-		<label>Select Ink Color2:  </label>
+		<label>Select Text Color:  </label>
 		<select  id="color3" name="color3" >
-			<?php include 'newincludes/options-all.php';?>
+			<?php include 'newincludes/options-txt2.php';?>
 		</select>
 	</div>
 

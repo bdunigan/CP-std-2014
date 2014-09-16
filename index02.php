@@ -36,8 +36,20 @@
 
 	// CP Variables -----------------------------------------
     // This is where you put the name of the correct folder with the files and images
+
 	$images_folder = '/frame02/web/';
 	$printimages_folder = 'images/frame02/print/';
+
+
+
+    // End CP Variables
+	$alt1 = 'images' . $images_folder . '4.25x5.75.png';
+	$alt2 = 'images' . $images_folder . '5.75x4.25.png';
+	$alt1d = 'images' . $images_folder . '4.25x5.75d.png';
+	$alt2d = 'images' . $images_folder . '5.75x4.25d.png';
+
+	$example1 = 'images' . $images_folder . 'ex1.jpg';
+	$example2 = 'images' . $images_folder . 'ex2.jpg';
 
 	// checking user input
 	foreach ($default as $k=>$v){
@@ -61,52 +73,16 @@
 	$_POST['marginleft'] = floatval($_POST['marginleft']);
 	$_POST['margin'] = floatval($_POST['margin']);
 	$_POST['PhotoZoom'] = intval($_POST['PhotoZoom']);
-	
-	// saving the current image in a session
-	// in case the user leaves and comes back to the page
-	if (!isset($_SESSION['current_image'])) $_SESSION['current_image'] = '';
-	if ((isset($_POST['current_image'])) && (is_file(UPLOADSPATH.'/original/'.$_POST['current_image']))){
-		$_SESSION['current_image'] = $_POST['current_image'];
-	}
+
 	
 	// default form action and image source
-	$user_photo = URL.IMAGESPATH.'/nophoto.jpg';
+	$user_photo = URL.IMAGESPATH. $images_folder .'/nophoto1.jpg';
 	
 	// show warning and recommend size for the frame
 	$show_dpi_warning = false;
 	$recommended = '';
 	$image_width = 0;
-	
-	// if the user is using a session image, use it by default
-	if ($_SESSION['current_image'] != ''){
-		// getting the photo size based on the largest frame (5x7)
-		$user_photo = getImageSource($_SESSION['current_image'], 288, 397);
-		list($image_width, $image_height) = getimagesize(UPLOADSPATH.'/original/'.$_SESSION['current_image']);
-		
-		$size_key = 0;
-		$div_by = $image_width;
-		if ($image_height < $image_width){
-			$size_key = 1;
-			$div_by = $image_height;
-		}
-		
-		$cur_size = explode('x', $_POST['FrameSize']);
-		$dpi = $div_by / $cur_size[$size_key];
-		
-		// if dpi is too low
-		if ($dpi < MINDPI) {
-			$show_dpi_warning = true;
-		}
-		// finding the recommended frame size based on dpi
-		foreach ($frame_sizes as $k=>$v){
-			$cur_size = explode('x', $k);
-			$dpi = $div_by / $cur_size[$size_key];
-			if ($dpi >= RECOMMENDEDDPI){
-				$recommended = $k;
-				break;	
-			}
-		}
-	}
+
 	
 	// checking if the user submitted a from
 	if (isset($_POST['form_action'])){
@@ -189,7 +165,7 @@
 			if ($_POST['matchproof'] == 0){
 
 				// checking if the user uploaded a photo
-				if ($user_photo == URL.IMAGESPATH.'/nophoto.jpg'){
+				if ($user_photo == URL.IMAGESPATH.'nophoto.jpg'){
 					$err_arr[] = " - Please select a photo";
 					$valid = false;
 				}
@@ -250,12 +226,6 @@
 			else {
 				include("process.php");
 			}
-
-		//--------send buy first
-
-	//echo '<script type="text/javascript">', 
-	// 'buyFunction();', 
-	// '</script>'; 
 		}
 	}
 	
@@ -273,21 +243,67 @@
 ?>
 <?php include 'newincludes/meta.php';?>
 <?php include 'newincludes/top.php';?>
-<div class="field">
-<?php include 'newincludes/size-select.php';?>
-	</div>
-<?php include 'newincludes/mid.php';?>
 
+
+
+
+
+<!--////////////// Choose If both layouts///////-->
+<div class="field">
+	<label for="pfapp_frame_size_select">Card Layout: <span id="pfapp_recommended" class="small"></span></label>
+	<?php include 'newincludes/size-select.php';?>
+	</div>
+
+
+
+<!--////////////// Choose Selected Example///////-->
+<div class="field hideDiv" id="select-example">
+	<label for="select-example" >Example Shown: <br/></label>
+
+	<input type="radio" name="example" valone="<?php echo $alt1;?>" valtwo="<?php echo $alt2;?>" id="example-light" checked="checked" >Light Example<br>
+	<input type="radio" name="example" valone="<?php echo $alt1d;?>" valtwo="<?php echo $alt2d;?>" id="example-dark"  >Dark Example
+	<?php include 'newincludes/example-alert.php';?>
+
+</div>
+
+<?php include 'newincludes/mid.php';?>
+<div class=""><?php include 'newincludes/select-card-type.php';?></div>
+<div class=""><?php include 'newincludes/select-paper.php';?></div>				
+<div class="hide" id="env-select"><?php include 'newincludes/select-envelope.php';?></div>				
+<div class=""><?php include 'newincludes/select-name1.php';?></div>
+<div class=""><?php include 'newincludes/select-name2.php';?></div>
+<div class=""><?php include 'newincludes/select-date.php';?></div>
 
 <!--////////////////////////////////////////////////New Save the Date Dropdowns////////////////////////////////////////-->
 
-				<?php include 'newincludes/select-name1.php';?>
-				<?php include 'newincludes/select-name2.php';?>
-				<?php include 'newincludes/select-date.php';?>
-				<?php include 'newincludes/select-ink-color.php';?>
-				<!--<?php include 'newincludes/select-location.php';?>-->
-				<!--<<?php include 'newincludes/select-stripe-color.php';?>-->
+<div class="hide"><?php include 'newincludes/select-location.php';?></div>
 
+
+	<div class="field"><!--COLOR 1-->
+		<input type="hidden" name="color1-name" id="color1-name" value="Select Accent Color">
+		<label>Select Accent Color:  </label>
+		<select  id="color1" name="color1" >
+			<?php include 'newincludes/options-all.php';?>
+		</select>
+	</div>
+
+
+	<div class="field"><!--COLOR 2-->
+		<input type="hidden" name="color2-name" id="color2-name" value="Text Color">
+		<label>Select Ink Color:  </label>
+		<select  id="color2" name="color2" >
+			<?php include 'newincludes/options-txt2.php';?>
+		</select>
+	</div>
+
+
+	<div class="field hide"><!--COLOR 3-->
+		<input type="hidden" name="color3-name" id="color3-name" value="-">
+		<label>Select Ink Color2:  </label>
+		<select  id="color3" name="color3" >
+			<?php include 'newincludes/options-all.php';?>
+		</select>
+	</div>
 
 
 
@@ -295,4 +311,7 @@
 <!--END New Dropdowns///////////////////-->
 
 
+
 <?php include 'newincludes/bottom.php';?>
+
+
