@@ -26,7 +26,7 @@
 		'marginleft'	=>	0,
 		'margin'		=>	0,
 		'MatchProof'    =>  0,
-		'FrameSize'		=>	'4.25x5.75',
+		'FrameSize'		=>	'4.25x5.75', //change this if it is landscape only
 		'PhotoZoom'		=>	50,
 		'OrderNumber'	=>	'',
 		'FirstName'		=>	'',
@@ -249,7 +249,7 @@
 
 
 <!--////////////// Choose If both layouts///////-->
-<div class="field">
+<div class="field ">
 	<label for="pfapp_frame_size_select">Card Layout: <span id="pfapp_recommended" class="small"></span></label>
 	<?php include 'newincludes/size-select.php';?>
 	</div>
@@ -265,7 +265,7 @@
 	<?php include 'newincludes/example-alert.php';?>
 
 </div>
-
+<!--- SKIP THIS-->
 <?php include 'newincludes/mid.php';?>
 <div class=""><?php include 'newincludes/select-card-type.php';?></div>
 <div class=""><?php include 'newincludes/select-paper.php';?></div>				
@@ -274,7 +274,7 @@
 <div class=""><?php include 'newincludes/select-name2.php';?></div>
 <div class=""><?php include 'newincludes/select-date.php';?></div>
 
-<!--////////////////////////////////////////////////New Save the Date Dropdowns////////////////////////////////////////-->
+<!--///////New Save the Date Dropdowns////////////////////////////////////////-->
 
 <div class=""><?php include 'newincludes/select-location.php';?></div>
 
@@ -289,7 +289,7 @@
 
 
 	<div class="field"><!--COLOR 2-->
-		<input type="hidden" name="color2-name" id="color2-name" value="Text Color">
+		<input type="hidden" name="color2-name" id="color2-name" value="Select Ink Color">
 		<label>Select Ink Color:  </label>
 		<select  id="color2" name="color2" >
 			<?php include 'newincludes/options-txt.php';?>
@@ -297,11 +297,11 @@
 	</div>
 
 
-	<div class="field hide"><!--COLOR 3-->
+	<div class="field "><!--COLOR 3-->
 		<input type="hidden" name="color3-name" id="color3-name" value="-">
-		<label>Select Ink Color2:  </label>
+		<label>Select Other Ink Color2  </label>
 		<select  id="color3" name="color3" >
-			<?php include 'newincludes/options-all.php';?>
+			<?php include 'newincludes/options-txt.php';?>
 		</select>
 	</div>
 
