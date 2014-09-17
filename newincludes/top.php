@@ -39,6 +39,15 @@ $("document").ready(function() {
 $("#buyProofBtn").click(function() {$('#prooforderinput').attr({value:  'bozo'});	});
 
 
+
+//example default
+
+var defaultLayout = $('#select-layout').attr('default');
+if(defaultLayout == '5.75x4.25'){
+	$('#frameA2').prop('selected', true);
+}else{
+}
+
 //Example Select
     var current_size = $('#pfapp_frame_size_select').val();
 

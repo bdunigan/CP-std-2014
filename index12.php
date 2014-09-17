@@ -26,7 +26,7 @@
 		'marginleft'	=>	0,
 		'margin'		=>	0,
 		'MatchProof'    =>  0,
-		'FrameSize'		=>	'5.75x4.25',
+		'FrameSize'		=>	'4.25x5.75',
 		'PhotoZoom'		=>	50,
 		'OrderNumber'	=>	'',
 		'FirstName'		=>	'',
@@ -249,7 +249,7 @@
 
 
 <!--////////////// Choose If both layouts///////-->
-<div class="hide">
+<div class="hide" default="5.75x4.25" id="select-layout">
 	<label for="pfapp_frame_size_select">Card Layout: <span id="pfapp_recommended" class="small"></span></label>
 	<?php include 'newincludes/size-select.php';?>
 	</div>
