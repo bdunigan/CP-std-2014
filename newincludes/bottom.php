@@ -2,7 +2,7 @@
 	            <div class="field" id="imageapprovebox">
 	            		<input type="checkbox" id="imageapprove" name="imageapprove" value="<?PHP printValue('MatchProof'); ?>"> I approve this image for printing
 	            </div>
-
+ 
 				 
 				<div id="personalFields" style="margin-bottom:20px;">
 

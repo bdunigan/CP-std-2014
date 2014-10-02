@@ -1,1 +1,1 @@
-<p class="alertText2">These example just show how something will look on a color.</p>
+<a href="#" class="alertText2"  title="title" id="example-alert">This is for visualization only.</a>

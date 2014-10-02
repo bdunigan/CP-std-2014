@@ -120,6 +120,18 @@ ng.get('buyProofBtn').add_event('change', function(evt){
 		if (!ng.Validate.email(ng.get('pfapp_email').value)){
 			errs.push(' - Email');
 		}
+//New 2014 Validation		
+		if (ng.get('name1').value == ''){
+			errs.push(' - Name 1');	
+		}
+
+		if (ng.get('name2').value == ''){
+			errs.push(' - Name 2');	
+		}
+
+		if (ng.get('date').value == ''){
+			errs.push(' - Date');	
+		}		
 
 		
 		if (errs.length){

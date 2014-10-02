@@ -107,8 +107,8 @@ if ($_SESSION['current_image'] != '') {
 	//$mail->SMTPSecure = 'tls';				// Enable encryption, 'ssl' also accepted
 	/* end SMTP setup */
 
-	$mail->FromName = 'Photo Creator';	// from name
-	$mail->AddAddress('bryan@cardsandpockets.com', 'CP Photos');  // Add a recipient
+	$mail->FromName = 'Save The Date Wizard';	// from name
+	$mail->AddAddress('andy@cardsandpockets.com', 'CP Photos');  // Add a recipient
 	$mail->AddAttachment($file);    // Adding the pdf file
 	
 	$mail->IsHTML(true);

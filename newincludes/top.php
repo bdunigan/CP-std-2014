@@ -204,8 +204,6 @@ console.log(cardSelection);
 	});
 
 
-
-
 //approval image alert
 	$( "#imageapprove" ).change(function() {
 		 if($(this).is(':checked')) {
@@ -216,7 +214,6 @@ console.log(cardSelection);
             href : '#inline1', 
             title: '',
             closeClick: false
-
             
         },
     ], {
@@ -227,6 +224,25 @@ console.log(cardSelection);
 	}
 	});
 
+
+//Inline 4
+	$( "#example-alert" ).click(function() {
+
+		$.fancybox.open([
+		{
+			href : '#inline4', 
+			title: '',
+			closeClick: false
+
+
+		},
+		], {
+			padding : 20
+		});
+
+		return false;
+	});
+// -- end of inline 4	
 
 	
 	$( "#pfapp_qty" ).keyup(function() {
@@ -255,6 +271,7 @@ $('.newButton3').hover(function() {
 
 $('.tipOne').attr('title','Check this box if you previously submitted a proof order and you want to use that image for this order');
 $('.tipTwo').attr('title','Your previous order number can be found in your confirmation email. ');
+$('.tipThree').attr('title','This design features a “light” and “dark” visualization so that you can get a sense of how light or dark text will contrast against your photo. It is important to choose colors in the drop-down that will print well to show up against your unique photo. For example, light colors will show up better against a dark background, but darker colors should be selected if you have a light background. ');
 
 
 //cluetips 
@@ -346,8 +363,8 @@ $.fancybox.open([
 	.hideDiv{display: none;}
 	ul{list-style: none;}
 	.alertText{font-size: 13px; color:#df5a5c;}
-	.alertText2{font-size: 13px; color:#bd8586;}
-	a.tipOne, a.tipTwo{display: inline-block; line-height: 25px; background: url('images/question.gif') no-repeat right; padding-right: 30px; text-decoration: none; color:#000000; border: none !important;}
+	.alertText2{font-size: 13px; color:#bd8586; display: block; margin: 10px 0 0 20px;}
+	a.tipOne, a.tipTwo, a.tipThree{display: inline-block; line-height: 25px; background: url('images/question.gif') no-repeat right; padding-right: 30px; text-decoration: none; color:#000000; border: none !important;}
 	.field label {width: 130px; display: inline-block;}
 	#select-example label{width: 230px; display: block;}
 	#pfapp_range_slider label {width:80%;}
@@ -373,7 +390,9 @@ $.fancybox.open([
 	.newHover2 { background: #dd8f3b; border: 1px solid #c6c6c6;display: inline-block; line-height: 28px;padding: 0 12px; -webkit-border-radius: 2px; border-radius: 2px; cursor:pointer; margin: 10px 0;  }
 	.newButton3 { background: #b7d8cc; border: 1px solid #c6c6c6; display: inline-block; line-height: 28px; padding: 0 12px; -webkit-border-radius: 2px; border-radius: 2px; cursor:pointer; margin: 10px 0;  }
 	.newHover3 { background: #8edbbf; border: 1px solid #c6c6c6;display: inline-block; line-height: 28px;padding: 0 12px; -webkit-border-radius: 2px; border-radius: 2px; cursor:pointer; margin: 10px 0;  }
-	#inline1 a, #inline2 a, #inline3 a{text-decoration: none; color:#000000;}
+	#inline1 a, #inline2 a, #inline3 a, #inline4 a{text-decoration: none; color:#000000;}
+
+	.fancybox-wrap{top: 100px !important;}
 
 </style>
 
@@ -390,6 +409,8 @@ $.fancybox.open([
 		    <span class="newButton3">I Understand</span>
 		</a>
 	</div>
+
+
 
 <div style="width: 500px; display: none;" id="inline2">
 		<h3>Hi There!</h3>
@@ -426,10 +447,21 @@ $.fancybox.open([
 		</a>
 	</div>
 
+<div style="width: 500px; display: none;" id="inline4">
+		<p>This design features a “light” and “dark” visualization so that you can get a sense of how light or dark text will contrast against your photo.</p>
+		<p> It is important to <em>choose colors in the drop-down that will print well to show up against your unique photo</em>. For example, light colors will show up better against a dark background, but darker colors should be selected if you have a light background.
+		</p>
+		<a href="#" class="fncy-custom-close" >
+		    <span class="newButton3">I Understand</span>
+		</a>
+	</div>
+
+
 <div id="pfapp_container">
 
 	<div id="pfapp_drag_container">&nbsp;</div>
 	<div id="loadingContainer"><img src="images/cart-gif.gif" width="400" height="400" style="display:block; margin:auto;" id="loadingImage" ></div>
+
 	<div id="frameTwo">
 		<div id="pfapp_picture_div">
 	    	
