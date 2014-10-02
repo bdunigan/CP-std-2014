@@ -14,8 +14,8 @@
 	
 	// list of frame sizes ---- This is where you input the name of the save the date
 	$frame_sizes = array(
-		'4.25x5.75'	=>	'Picture Perfect Portrait;',
-		'5.75x4.25'	=>	'Picture Perfect Landscape;'
+		'4.25x5.75'	=>	'New Beginnings Portrait;',
+		'5.75x4.25'	=>	'New Beginnings Landscape;'
 	);
 	
 	// default values
@@ -37,8 +37,8 @@
 	// CP Variables -----------------------------------------
     // This is where you put the name of the correct folder with the files and images
 
-	$images_folder = '/frame11/web/';
-	$printimages_folder = 'images/frame11/print/';
+	$images_folder = '/frame18/web/';
+	$printimages_folder = 'images/frame18/print/';
 
 
 
@@ -76,7 +76,7 @@
 
 	
 	// default form action and image source
-	$user_photo = URL.IMAGESPATH. $images_folder .'/nophoto1.jpg';
+	$user_photo = URL.IMAGESPATH. $images_folder .'/nophoto.jpg';
 	
 	// show warning and recommend size for the frame
 	$show_dpi_warning = false;
@@ -249,7 +249,7 @@
 
 
 <!--////////////// Choose If both layouts///////-->
-<div class="hide">
+<div class="hide" default="" id="select-layout">
 	<label for="pfapp_frame_size_select">Card Layout: <span id="pfapp_recommended" class="small"></span></label>
 	<?php include 'newincludes/size-select.php';?>
 	</div>
@@ -280,8 +280,8 @@
 
 
 	<div class="field"><!--COLOR 1-->
-		<input type="hidden" name="color1-name" id="color1-name" value="Select Banner/Name Color">
-		<label>Select Banner/Name Color:  </label>
+		<input type="hidden" name="color1-name" id="color1-name" value="Select Banner Color">
+		<label>Select Banner Color:  </label>
 		<select  id="color1" name="color1" >
 			<?php include 'newincludes/options-all.php';?>
 		</select>
@@ -289,8 +289,8 @@
 
 
 	<div class="field"><!--COLOR 2-->
-		<input type="hidden" name="color2-name" id="color2-name" value="Select Accent Color">
-		<label>Select Accent Color:  </label>
+		<input type="hidden" name="color2-name" id="color2-name" value="Select Dotted Stripe Color">
+		<label>Select Dotted Stripe Color:  </label>
 		<select  id="color2" name="color2" >
 			<?php include 'newincludes/options-all.php';?>
 		</select>

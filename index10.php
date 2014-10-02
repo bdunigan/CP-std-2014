@@ -14,8 +14,8 @@
 	
 	// list of frame sizes ---- This is where you input the name of the save the date
 	$frame_sizes = array(
-		'4.25x5.75'	=>	'Picture Perfect Portrait;',
-		'5.75x4.25'	=>	'Picture Perfect Landscape;'
+		'4.25x5.75'	=>	'Cascading Banner Portrait;',
+		'5.75x4.25'	=>	'Cascading Banner Landscape;'
 	);
 	
 	// default values
@@ -37,8 +37,8 @@
 	// CP Variables -----------------------------------------
     // This is where you put the name of the correct folder with the files and images
 
-	$images_folder = '/frame11/web/';
-	$printimages_folder = 'images/frame11/print/';
+	$images_folder = '/frame10/web/';
+	$printimages_folder = 'images/frame10/print/';
 
 
 
@@ -76,7 +76,7 @@
 
 	
 	// default form action and image source
-	$user_photo = URL.IMAGESPATH. $images_folder .'/nophoto1.jpg';
+	$user_photo = URL.IMAGESPATH. $images_folder .'/nophoto.jpg';
 	
 	// show warning and recommend size for the frame
 	$show_dpi_warning = false;
@@ -249,7 +249,7 @@
 
 
 <!--////////////// Choose If both layouts///////-->
-<div class="hide">
+<div class="hide" default="" id="select-layout">
 	<label for="pfapp_frame_size_select">Card Layout: <span id="pfapp_recommended" class="small"></span></label>
 	<?php include 'newincludes/size-select.php';?>
 	</div>
@@ -257,7 +257,7 @@
 
 
 <!--////////////// Choose Selected Example///////-->
-<div class="field" id="select-example">
+<div class="hideDiv" id="select-example">
 	<label for="select-example" >Example Shown: <br/></label>
 
 	<input type="radio" name="example" valone="<?php echo $alt1;?>" valtwo="<?php echo $alt2;?>" id="example-light"  >Light Example<br>
@@ -276,12 +276,12 @@
 
 <!--////////////////////////////////////////////////New Save the Date Dropdowns////////////////////////////////////////-->
 
-<div class="hide"><?php include 'newincludes/select-location.php';?></div>
+<div class=""><?php include 'newincludes/select-location.php';?></div>
 
 
 	<div class="field"><!--COLOR 1-->
-		<input type="hidden" name="color1-name" id="color1-name" value="Select Banner/Name Color">
-		<label>Select Banner/Name Color:  </label>
+		<input type="hidden" name="color1-name" id="color1-name" value="Select Main Color">
+		<label>Select Main Color:  </label>
 		<select  id="color1" name="color1" >
 			<?php include 'newincludes/options-all.php';?>
 		</select>
@@ -289,8 +289,8 @@
 
 
 	<div class="field"><!--COLOR 2-->
-		<input type="hidden" name="color2-name" id="color2-name" value="Select Accent Color">
-		<label>Select Accent Color:  </label>
+		<input type="hidden" name="color2-name" id="color2-name" value="Select Shadow Color">
+		<label>Select Shadow Color:  </label>
 		<select  id="color2" name="color2" >
 			<?php include 'newincludes/options-all.php';?>
 		</select>
@@ -298,8 +298,8 @@
 
 
 	<div class="field"><!--COLOR 3-->
-		<input type="hidden" name="color3-name" id="color3-name" value="Select Text Color">
-		<label>Select Text Color:  </label>
+		<input type="hidden" name="color3-name" id="color3-name" value="Select Name/Date Color">
+		<label>Select Name/Date Color:  </label>
 		<select  id="color3" name="color3" >
 			<?php include 'newincludes/options-txt3.php';?>
 		</select>
