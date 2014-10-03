@@ -14,8 +14,8 @@
 	
 	// list of frame sizes ---- This is where you input the name of the save the date
 	$frame_sizes = array(
-		'4.25x5.75'	=>	'Sweetly Simple Portrait;',
-		'5.75x4.25'	=>	'Sweetly Simple Landscape;'
+		'4.25x5.75'	=>	'Wedding Flowers Portrait;',
+		'5.75x4.25'	=>	'Wedding Flowers Landscape;'
 	);
 	
 	// default values
@@ -26,7 +26,7 @@
 		'marginleft'	=>	0,
 		'margin'		=>	0,
 		'MatchProof'    =>  0,
-		'FrameSize'		=>	'5.75x4.25',
+		'FrameSize'		=>	'4.25x5.75',
 		'PhotoZoom'		=>	50,
 		'OrderNumber'	=>	'',
 		'FirstName'		=>	'',
@@ -37,8 +37,8 @@
 	// CP Variables -----------------------------------------
     // This is where you put the name of the correct folder with the files and images
 
-	$images_folder = '/frame21/web/';
-	$printimages_folder = 'images/frame21/print/';
+	$images_folder = '/frame19/web/';
+	$printimages_folder = 'images/frame19/print/';
 
 
 
@@ -257,7 +257,7 @@
 
 
 <!--////////////// Choose Selected Example///////-->
-<div class="field" id="select-example">
+<div class="hideDiv" id="select-example">
 	<label for="select-example" >Example Shown: <br/></label>
 
 	<input type="radio" name="example" valone="<?php echo $alt1;?>" valtwo="<?php echo $alt2;?>" id="example-light"  >Light Example<br>
@@ -280,8 +280,8 @@
 
 
 	<div class="field"><!--COLOR 1-->
-		<input type="hidden" name="color1-name" id="color1-name" value="Select Accent Color">
-		<label>Select Accent Color:  </label>
+		<input type="hidden" name="color1-name" id="color1-name" value="Select Stripe Color">
+		<label>Select Stripe Color:  </label>
 		<select  id="color1" name="color1" >
 			<?php include 'newincludes/options-all.php';?>
 		</select>
@@ -289,8 +289,8 @@
 
 
 	<div class="field"><!--COLOR 2-->
-		<input type="hidden" name="color2-name" id="color2-name" value="Select Line Color">
-		<label>Select Line Color:  </label>
+		<input type="hidden" name="color2-name" id="color2-name" value="Select Accent Color">
+		<label>Select Accent Color:  </label>
 		<select  id="color2" name="color2" >
 			<?php include 'newincludes/options-all.php';?>
 		</select>

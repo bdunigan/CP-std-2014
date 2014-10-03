@@ -14,8 +14,8 @@
 	
 	// list of frame sizes ---- This is where you input the name of the save the date
 	$frame_sizes = array(
-		'4.25x5.75'	=>	'Sweetly Simple Portrait;',
-		'5.75x4.25'	=>	'Sweetly Simple Landscape;'
+		'4.25x5.75'	=>	'San Francisco Portrait;',
+		'5.75x4.25'	=>	'San Francisco Landscape;'
 	);
 	
 	// default values
@@ -37,8 +37,8 @@
 	// CP Variables -----------------------------------------
     // This is where you put the name of the correct folder with the files and images
 
-	$images_folder = '/frame21/web/';
-	$printimages_folder = 'images/frame21/print/';
+	$images_folder = '/frame06/web/';
+	$printimages_folder = 'images/frame06/print/';
 
 
 
@@ -257,11 +257,11 @@
 
 
 <!--////////////// Choose Selected Example///////-->
-<div class="field" id="select-example">
+<div class="hideDiv" id="select-example">
 	<label for="select-example" >Example Shown: <br/></label>
 
-	<input type="radio" name="example" valone="<?php echo $alt1;?>" valtwo="<?php echo $alt2;?>" id="example-light"  >Light Example<br>
-	<input type="radio" name="example" valone="<?php echo $alt1d;?>" valtwo="<?php echo $alt2d;?>" id="example-dark" checked="checked" >Dark Example
+	<input type="radio" name="example" valone="<?php echo $alt1;?>" valtwo="<?php echo $alt2;?>" id="example-light"  checked="checked" >Light Example<br>
+	<input type="radio" name="example" valone="<?php echo $alt1d;?>" valtwo="<?php echo $alt2d;?>" id="example-dark"  >Dark Example
 	<?php include 'newincludes/example-alert.php';?>
 
 </div>
@@ -288,7 +288,7 @@
 	</div>
 
 
-	<div class="field"><!--COLOR 2-->
+	<div class="hide"><!--COLOR 2-->
 		<input type="hidden" name="color2-name" id="color2-name" value="Select Line Color">
 		<label>Select Line Color:  </label>
 		<select  id="color2" name="color2" >
@@ -301,7 +301,7 @@
 		<input type="hidden" name="color3-name" id="color3-name" value="Select Text Color">
 		<label>Select Text Color:  </label>
 		<select  id="color3" name="color3" >
-			<?php include 'newincludes/options-txt3.php';?>
+			<?php include 'newincludes/options-txt2.php';?>
 		</select>
 	</div>
 

@@ -249,7 +249,7 @@
 
 
 <!--////////////// Choose If both layouts///////-->
-<div class="hide">
+<div class="hide" default="" id="select-layout">
 	<label for="pfapp_frame_size_select">Card Layout: <span id="pfapp_recommended" class="small"></span></label>
 	<?php include 'newincludes/size-select.php';?>
 	</div>
