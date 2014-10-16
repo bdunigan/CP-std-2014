@@ -51,25 +51,48 @@ if(defaultLayout == '5.75x4.25'){
 //Example Select
     var current_size = $('#pfapp_frame_size_select').val();
 
-
+//first load of example image
 	function exampleImage() {
 	   if(current_size == "4.25x5.75"){
 				if($('#example-light').is(':checked')) {
 					var alt1 =  $('#example-light').attr('valone');
-					$("#pfapp_photo_frame").attr( "src", alt1 );
+					var alt3 =  $('#example-light').attr('valthree');
+
+					if($('#guide-select').is(':checked')) {
+						$("#pfapp_photo_frame").attr( "src", alt3 );
+					}else{
+						$("#pfapp_photo_frame").attr( "src", alt1 );
+					}
 				} 
 				if($('#example-dark').is(':checked')) {
 					var alt1d=  $('#example-dark').attr('valone');
-					$("#pfapp_photo_frame").attr( "src", alt1d);
+					var alt3d=  $('#example-dark').attr('valthree');
+					if($('#guide-select').is(':checked')) {
+						$("#pfapp_photo_frame").attr( "src", alt3d);
+					}else{
+						$("#pfapp_photo_frame").attr( "src", alt1d);
+					}
 				}
 			}if(current_size == "5.75x4.25"){
 				if($('#example-light').is(':checked')) {
 					var alt2 =  $('#example-light').attr('valtwo');
-					$("#pfapp_photo_frame").attr( "src", alt2 );
+					var alt4 =  $('#example-light').attr('valfour');
+
+					if($('#guide-select').is(':checked')) {
+					$("#pfapp_photo_frame").attr( "src", alt4 );
+					}else{
+						$("#pfapp_photo_frame").attr( "src", alt2 );
+					}
 				} 
 				if($('#example-dark').is(':checked')) {
 					var alt2d=  $('#example-dark').attr('valtwo');
-					$("#pfapp_photo_frame").attr( "src", alt2d);
+					var alt4d=  $('#example-dark').attr('valfour');
+
+					if($('#guide-select').is(':checked')) {
+						$("#pfapp_photo_frame").attr( "src", alt4d);
+					}else{
+						$("#pfapp_photo_frame").attr( "src", alt2d);
+					}
 				}			
 			}		             
 	}
@@ -96,8 +119,10 @@ setTimeout(function() { exampleImage(); }, 100);
 	});
 
 
-
-
+//Guides Selected
+$( "#guide-select" ).change(function() {
+	exampleImage();
+ });
 
 
 //choose paper
@@ -394,6 +419,8 @@ $.fancybox.open([
 
 	.fancybox-wrap{top: 100px !important;}
 
+	#guide-box{padding: 30px; text-align: center;}
+
 </style>
 
 </head>
@@ -476,6 +503,7 @@ $.fancybox.open([
 	            </div>
 	            <img border="0" src="<?PHP echo IMAGESPATH.'/frames/web/'.$_POST['FrameSize'] + $example.'.png'; ?>" alt="" class="picture_frame" id="pfapp_photo_frame">
 	        </div>
+	        <div id="guide-box"><input type="checkbox" value="show-guides" id="guide-select" checked> Show Guides</div>
 	        <div id="pfapp_frame_title" style="display:none;"></div>
 	        <div id="pfapp_photo_tools" style="display:none;">
 	        	<div id="pfapp_fit_photo" class="newButton">Fit to Frame</div>

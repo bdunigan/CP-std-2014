@@ -1,5 +1,5 @@
 <?PHP
-	// general settings
+	// general settings 
 	define('URL', '');
 	define('IMAGESPATH', 'images');
 	define('INCLUDESPATH', 'includes');
