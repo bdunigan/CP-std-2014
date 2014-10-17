@@ -260,8 +260,8 @@
 <div class="field" id="select-example">
 	<label for="select-example" >Example Shown: <br/></label>
 
-	<input type="radio" name="example" valone="<?php echo $alt1;?>" valtwo="<?php echo $alt2;?>" id="example-light"  >Light Example<br>
-	<input type="radio" name="example" valone="<?php echo $alt1d;?>" valtwo="<?php echo $alt2d;?>" id="example-dark" checked="checked" >Dark Example
+	<input type="radio" name="example" valone="<?php echo $alt1;?>" valtwo="<?php echo $alt2;?>" valthree="<?php echo $alt3;?>" valfour="<?php echo $alt4;?>" id="example-light"  >Light Example<br>
+	<input type="radio"name="example" valone="<?php echo $alt1d;?>" valtwo="<?php echo $alt2d;?>" valthree="<?php echo $alt3d;?>" valfour="<?php echo $alt4d;?>" id="example-dark" checked="checked" >Dark Example
 	<?php include 'newincludes/example-alert.php';?>
 
 </div>

@@ -47,9 +47,14 @@
 	$alt2 = 'images' . $images_folder . '5.75x4.25.png';
 	$alt1d = 'images' . $images_folder . '4.25x5.75d.png';
 	$alt2d = 'images' . $images_folder . '5.75x4.25d.png';
+	$alt3 = 'images' . $images_folder . '4.25x5.75c.png';
+	$alt3d = 'images' . $images_folder . '4.25x5.75dc.png';
+	$alt4 = 'images' . $images_folder . '5.75x4.25c.png';
+	$alt4d = 'images' . $images_folder . '5.75x4.25dc.png';
 
 	$example1 = 'images' . $images_folder . 'ex1.jpg';
 	$example2 = 'images' . $images_folder . 'ex2.jpg';
+
 
 	// checking user input
 	foreach ($default as $k=>$v){
@@ -260,8 +265,8 @@
 <div class="hideDiv" id="select-example">
 	<label for="select-example" >Example Shown: <br/></label>
 
-	<input type="radio" name="example" valone="<?php echo $alt1;?>" valtwo="<?php echo $alt2;?>" id="example-light"  checked="checked" >Light Example<br>
-	<input type="radio" name="example" valone="<?php echo $alt1d;?>" valtwo="<?php echo $alt2d;?>" id="example-dark"  >Dark Example
+	<input type="radio" name="example" valone="<?php echo $alt1;?>" valtwo="<?php echo $alt2;?>" valthree="<?php echo $alt3;?>" valfour="<?php echo $alt4;?>" id="example-light"  checked="checked" >Light Example<br>
+	<input type="radio"name="example" valone="<?php echo $alt1d;?>" valtwo="<?php echo $alt2d;?>" valthree="<?php echo $alt3d;?>" valfour="<?php echo $alt4d;?>" id="example-dark"  >Dark Example
 	<?php include 'newincludes/example-alert.php';?>
 
 </div>
