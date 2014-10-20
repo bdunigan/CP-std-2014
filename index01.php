@@ -47,6 +47,10 @@
 	$alt2 = 'images' . $images_folder . '5.75x4.25.png';
 	$alt1d = 'images' . $images_folder . '4.25x5.75d.png';
 	$alt2d = 'images' . $images_folder . '5.75x4.25d.png';
+	$alt3 = 'images' . $images_folder . '4.25x5.75c.png';
+	$alt3d = 'images' . $images_folder . '4.25x5.75dc.png';
+	$alt4 = 'images' . $images_folder . '5.75x4.25c.png';
+	$alt4d = 'images' . $images_folder . '5.75x4.25dc.png';
 
 	$example1 = 'images' . $images_folder . 'ex1.png';
 	$example2 = 'images' . $images_folder . 'ex2.png';

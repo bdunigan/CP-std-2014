@@ -503,7 +503,13 @@ $.fancybox.open([
 	            </div>
 	            <img border="0" src="<?PHP echo IMAGESPATH.'/frames/web/'.$_POST['FrameSize'] + $example.'.png'; ?>" alt="" class="picture_frame" id="pfapp_photo_frame">
 	        </div>
-	        <div id="guide-box"><input type="checkbox" value="show-guides" id="guide-select" checked> Show Guides</div>
+
+	        <?php //SHOWS GUIDES ON ALL BUT 3 OF THE STD's
+	         	$pageNum = substr($images_folder, 1, 7);
+	         	if($pageNum != 'frame23' && $pageNum != 'frame22' && $pageNum != 'frame08')
+	         		echo '<div id="guide-box"><input type="checkbox" value="show-guides" id="guide-select" checked> Show Guides</div>';
+	         ?>
+	         
 	        <div id="pfapp_frame_title" style="display:none;"></div>
 	        <div id="pfapp_photo_tools" style="display:none;">
 	        	<div id="pfapp_fit_photo" class="newButton">Fit to Frame</div>
