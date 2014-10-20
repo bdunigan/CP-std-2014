@@ -1,49 +1,134 @@
+<!-- Scripts for Filters -->
+<script type="text/javascript" src="js/jquery.isotope.min.js"></script> 
+<script type="text/javascript" src="js/jquery.ba-bbq.min.js"></script>  
+<script type="text/javascript" src="js/swatch-script2.js"></script> 
+
 <style>
-#ctl00_rightColumn{display:none;}
-#nstd-right li{float:left; width:300px; text-align: center; list-style-type: none;}
+	#ctl00_rightColumn{display:none;}
 
-#std-infobox{width: 350px; background-color: #f1fdff; padding:15px; float: left; color: #37d9aa0;}
-#std-infobox img{float: right;}
-#std-infobox h3{font-family: 'Lato', sans-serif; color: #7d9aa0;}
+	#nstd-left{background:yellow; width: 140px; float: left;}
 
-#nstd-right .img1{float: left;}
-}
+	#nstd-right{ width: 800px; float: left;}
+	#nstd-right li{float:left; width:245px; text-align: center; list-style-type: none; margin-bottom:60px;}
+
+	#std-infobox{width: 250px; background-color: #f1fdff; padding:15px; float: left; color: #7d9aa0; margin-left: 20px;}
+	#std-infobox img{float: right;}
+	#std-infobox h3{font-family: 'Lato', sans-serif; color: #7d9aa0; width: 150px;}
+	#std-infobox .small{font-size: 10px; line-height: 14px;}
+
+	.nstd-img1{float: left; display: block; margin-right: 60px;}
+
+	/*---Styles from Color Chart */
+	    #sample1 li{float:left; background:#aac8c5; text-transform: uppercase;font-color:#ffffff; margin-right:4px;}
+	    #sample1 li a{display: block;  padding:5px 20px; }
+	    .colorGroupText{font-size:14px; background:#f6f4f1; padding:18px 18px 25px 18px; margin: 0px 20px 0px 0px;}
+	    p.colorGroupText b{display: block; color: #569c94; margin-bottom:10px;}
+	    #filters h3{color:#569c94;}
+	    dl {margin-top:5px;}
+
 </style>
 
-<div id="nstd-left"></div>
+	<img src="/images/2014/nstd-landing-img1.jpg" class="nstd-img1" />
 
-<div id="nstd-right">
-	<img src="/images/2014/nstd-landing-img1.jpg" class="img1" />
 	<div id="std-infobox">
-
-		<h3><b>New</b> Photo Positioning Tool</h3>
 
 		<img src="/images/2014/nstd-landing-img2.jpg" />
 
-		<p> This tool will allow you to upload your file to see how you like it with this Save the Date design. 
-			You will be able to size the photo and place it as you like.</p>
+		<h3><b>New</b> Photo Positioning Tool</h3>		
 
-		<p> Please note that when you enter your text and color choices, the image shown here will not change to reflect those customizations 
-			(only the photo will change). </p>
+		<p>Our exciting new tool will allow you to upload, size, and position your photo any way you like. This will allow you to visualize your photo in various designs we offer, and create a perfectly sized file to submit for printing. Look for the *wrench* icon (image here) to see if the Save the Date design you like features this option.</p>
 
-			<p>Our designers will create a custom file for you based on your colors, text, and your photo once you submit the file to the print shop. You can order a proof to see how your selections will look in print.</p>
 	</div><!-- std-infobox -->	
-	<div class="clear"></div>
-	<ul>
-		<li><a href="http://www.cardsandpockets.com/elegantphoto-savethedate-2.aspx"><img src="/images/products/savethedate/2014/nstd-elegantphoto.jpg"><p>Elegant Photo</p></a></li>
-		<li><a href="http://www.cardsandpockets.com/ornatephoto-savethedate-2.aspx"><img src="/images/products/savethedate/2014/nstd-ornatephoto.jpg"><p>Ornate Photo</p></a></li>
-		<li><a href="http://www.cardsandpockets.com/photoheart-savethedate-2.aspx"><img src="/images/products/savethedate/2014/nstd-photoheart.jpg"><p>Photo Heart</p></a></li>
-		<li><a href="http://www.cardsandpockets.com/singlephoto-savethedate-2.aspx"><img src="/images/products/savethedate/2014/nstd-singlephoto.jpg"><p>Single Photo</p></a></li>
-		<li><a href="http://www.cardsandpockets.com/colorstripe-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-colorstripe.jpg"><p>Color Stripe</p></a></li>
-		<li><a href="http://www.cardsandpockets.com/fallinlove.aspx"><img src="/images/products/savethedate/2014/nstd-fallinlove.jpg"><p>Fall in Love</p></a></li>
-		<li><a href="http://www.cardsandpockets.com/kraftphoto-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-kraftphoto.jpg"><p>Kraft Photo</p></a></li>
-		<li><a href="http://www.cardsandpockets.com/pictureperfect-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-pictureperfect.jpg"><p>Picture Perfect</p></a></li>
-		<li><a href="http://www.cardsandpockets.com/ajoyfuljoining-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-ajoyfuljoining.jpg"><p>A Joyful Joining</p></a></li>
-		<li><a href="http://www.cardsandpockets.com/ferriswheel-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-ferriswheel.jpg"><p>Ferris Wheel</p></a></li>
-		<li><a href="http://www.cardsandpockets.com/classicstyle-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-classicstyle.jpg"><p>Classic Style</p></a></li>
-		<li><a href="http://www.cardsandpockets.com/cascadingbanner-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-cascadingbanner.jpg"><p>Cascading Banner</p></a></li>
-		<li><a href="http://www.cardsandpockets.com/framedwithlove-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-framedwithlove.jpg"><p>Framed With Love</p></a></li>
-		<li><a href="http://www.cardsandpockets.com/newbeginnings-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-newbeginnings.jpg"><p>New Beginnings</p></a></li>
-               <li><a href="http://www.cardsandpockets.com/sweetlysimple-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-sweetlysimple.jpg"><p>Sweetly Simple</p></a></li>
-	</ul>
+
+	<div class="clear" style="margin-bottom:60px;"></div>
+
+<div id="nstd-left">
+        <div id="filters"> 
+
+        <!--Drop--> 
+        <h3>Filter By Finish</h3>   
+        <dl class="dropdown" id="sample2">
+        <dt><a href="#" class="mainDrop"><span>All</span></a></dt>
+            <dd>
+                <ul class="filter option-set" data-filter-group="finish">
+                    <li class="current selected"><a href="#filter-finish-any" data-filter-name="finish" data-filter-value=""><span>All</span></a></li>
+                    <li><a href="#filter-finish-matte" data-filter-name="finish" data-filter-value=".matte"><span class="choice">Matte</span></a></li>
+                    <li><a href="#filter-finish-metallic" data-filter-name="finish" data-filter-value=".metallic"><span class="choice">Metallic</span></a></li>
+                    <li><a href="#filter-finish-woodgrain" data-filter-name="finish" data-filter-value=".woodgrain"><span class="choice">Woodgrain</span></a></li>
+                    <li><a href="#filter-finish-linen" data-filter-name="finish" data-filter-value=".linen"><span class="choice">Linen</span></a></li>
+                    <li><a href="#filter-finish-iridesent" data-filter-name="finish" data-filter-value=".iridescent"><span class="choice">Iridescent</span></a></li>
+
+                </ul>
+            </dd>
+        </dl>
+        <!--Drop--> 
+        <h3>Filter By Color Family</h3> 
+        <dl class="dropdown" id="sample3">
+        <dt><a href="#" class="mainDrop"><span>All</span></a></dt>
+            <dd>
+                <ul class="filter option-set" data-filter-group="family">
+                    <li class="current selected"><a href="#filter-family-any" data-filter-name="family" data-filter-value=""><span>All</span></a></li>                      
+                    <li><a href="#filter-family-white" data-filter-name="family" data-filter-value=".white"><span class="choice">White/Cream</span></a></li>
+                    <li><a href="#filter-family-red" data-filter-name="family" data-filter-value=".red"><span class="choice">Red</span></a></li>
+                    <li><a href="#filter-family-yellow" data-filter-name="family" data-filter-value=".yellow"><span class="choice">Yellow/Orange</span></a></li>
+                    <li><a href="#filter-family-green" data-filter-name="family" data-filter-value=".green"><span class="choice">Green</span></a></li>
+                    <li><a href="#filter-family-blue" data-filter-name="family" data-filter-value=".blue"><span class="choice">Blue</span></a></li>
+                    <li><a href="#filter-family-brown" data-filter-name="family" data-filter-value=".brown"><span class="choice">Brown/Tan</span></a></li>
+                    <li><a href="#filter-family-purple" data-filter-name="family" data-filter-value=".purple"><span class="choice">Purple</span></a></li>
+                    <li><a href="#filter-family-black" data-filter-name="family" data-filter-value=".black"><span class="choice">Black/Grey</span></a></li>
+
+                </ul>
+            </dd>
+        </dl>       
+        <!--Drop-->
+        <h3>Filter By Brand</h3>
+        <dl class="dropdown" id="sample4">
+        <dt><a href="#" class="mainDrop"><span>All</span></a></dt>
+            <dd>
+                <ul class="filter option-set dropdown" data-filter-group="brand">
+                    <li class="current selected"><a href="#filter-brand-any" data-filter-name="brand" data-filter-value=""><span>All</span></a></li>
+                    <li><a href="#filter-brand-colorplan" data-filter-name="brand" data-filter-value=".colorplan"><span class="choice">Colorplan</span></a></li>
+                    <li><a href="#filter-brand-stardream" data-filter-name="brand" data-filter-value=".stardream"><span class="choice">Stardream</span></a></li>
+                    <li><a href="#filter-brand-candp" data-filter-name="brand" data-filter-value=".candp"><span class="choice">Cards & Pockets</span></a></li>
+                    <li><a href="#filter-brand-poptone" data-filter-name="brand" data-filter-value=".poptone"><span class="choice">Pop-Tone</span></a></li>
+                    <li><a href="#filter-brand-mohawk" data-filter-name="brand" data-filter-value=".mohawk"><span class="choice">Mohawk</span></a></li>
+                    <li><a href="#filter-brand-cocktail" data-filter-name="brand" data-filter-value=".cocktail"><span class="choice">Cocktail</span></a></li>
+                    <li><a href="#filter-brand-curious" data-filter-name="brand" data-filter-value=".curious"><span class="choice">Curious</span></a></li>
+                    <li><a href="#filter-brand-shine" data-filter-name="brand" data-filter-value=".shine"><span class="choice">Shine</span></a></li>
+                    <li><a href="#filter-brand-gmund" data-filter-name="brand" data-filter-value=".gmund"><span class="choice">Gmund</span></a></li>
+                    <li><a href="#filter-brand-carnival" data-filter-name="brand" data-filter-value=".carnival"><span class="choice">Carnival</span></a></li>
+                </ul>
+            </dd>
+        </dl>
+
+   </div><!--  filters -->
+</div><!-- nstd-left -->
+
+<div id="nstd-right">	
+	<ul id="swatchList">
+		
+		<li class="white colorplan matte extended hundred"><a href="fallinlove.aspx"><img src="/images/products/savethedate/2014/nstd-fallinlove.jpg"><p>Fall in Love</p></a></li>
+		<li><a href="kraftphoto-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-kraftphoto.jpg"><p>Kraft Photo</p></a></li>
+		<li><a href="pictureperfect-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-pictureperfect.jpg"><p>Picture Perfect</p></a></li>
+		<li><a href="ajoyfuljoining-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-ajoyfuljoining.jpg"><p>A Joyful Joining</p></a></li>
+		<li><a href="ferriswheel-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-ferriswheel.jpg"><p>Ferris Wheel</p></a></li>
+		<li><a href="classicstyle-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-classicstyle.jpg"><p>Classic Style</p></a></li>
+		<li><a href="cascadingbanner-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-cascadingbanner.jpg"><p>Cascading Banner</p></a></li>
+		<li><a href="framedwithlove-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-framedwithlove.jpg"><p>Framed With Love</p></a></li>
+		<li><a href="newbeginnings-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-newbeginnings.jpg"><p>New Beginnings</p></a></li>
+               <li><a href="sweetlysimple-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-sweetlysimple.jpg"><p>Sweetly Simple</p></a></li>
+               <li><a href="sanfrancisco-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-sanfrancisco.jpg"><p>San Francisco</p></a></li>
+	       <li><a href="watercolor-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-watercolor.jpg"><p>Watercolor</p></a></li>
+	       <li><a href="togetherforever-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-togetherforever.jpg"><p>Together Forever</p></a></li>
+	       <li><a href="stitchedtogether-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-stitchedtogether.jpg"><p>Stitched Together</p></a></li>
+	       <li><a href="weddingflowers-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-weddingflowers.jpg"><p>Wedding Flowers</p></a></li>
+               <li><a href="picketfences-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-picketfences.jpg"><p>Picket Fences </p></a></li>
+               <li><a href="candystripes-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-candystripes.jpg"><p>Candy Stripes </p></a></li>
+               <li><a href="fancyframe-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-fancyframe.jpg"><p>Fancy Frame </p></a></li>
+               <li><a href="elegantphoto-savethedate-2.aspx"><img src="/images/products/savethedate/2014/nstd-elegantphoto.jpg"><p>Elegant Photo</p></a></li>
+		<li><a href="ornatephoto-savethedate-2.aspx"><img src="/images/products/savethedate/2014/nstd-ornatephoto.jpg"><p>Ornate Photo</p></a></li>
+		<li><a href="photoheart-savethedate-2.aspx"><img src="/images/products/savethedate/2014/nstd-photoheart.jpg"><p>Photo Heart</p></a></li>
+		<li><a href="singlephoto-savethedate-2.aspx"><img src="/images/products/savethedate/2014/nstd-singlephoto.jpg"><p>Single Photo</p></a></li>
+		<li><a href="colorstripe-savethedate.aspx"><img src="/images/products/savethedate/2014/nstd-colorstripe.jpg"><p>Color Stripe</p></a></li>
+</ul>
 </div>
