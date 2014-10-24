@@ -19,6 +19,10 @@ $("document").ready(function() {
 
 		$('#pfapp_photo_tools').addClass( "hideDiv" );
 		$("#overlayContainer").addClass( "hideDiv" );
+		$('#guide-select').attr('checked', false);
+		exampleImage();
+		$('#photo-text').toggleClass( "hide" );
+		
 
 		//if checked set the values to blank
 		if($('#matchproof').is(':checked')) {
@@ -34,6 +38,9 @@ $("document").ready(function() {
 		$("#overlayContainer").removeClass( "hideDiv" );
 
 		$('#pfapp_photo_tools').removeClass( "hideDiv" );	
+		exampleImage();
+		$('#photo-text').toggleClass( "hide" );
+
 
 	});
 $("#buyProofBtn").click(function() {$('#prooforderinput').attr({value:  'bozo'});	});
@@ -60,8 +67,10 @@ if(defaultLayout == '5.75x4.25'){
 
 					if($('#guide-select').is(':checked')) {
 						$("#pfapp_photo_frame").attr( "src", alt3 );
+						$("#guide-text").removeClass( "hide" );
 					}else{
 						$("#pfapp_photo_frame").attr( "src", alt1 );
+						$("#guide-text").addClass( "hide" ); 
 					}
 				} 
 				if($('#example-dark').is(':checked')) {
@@ -69,8 +78,10 @@ if(defaultLayout == '5.75x4.25'){
 					var alt3d=  $('#example-dark').attr('valthree');
 					if($('#guide-select').is(':checked')) {
 						$("#pfapp_photo_frame").attr( "src", alt3d);
+						$("#guide-text").removeClass( "hide" );
 					}else{
 						$("#pfapp_photo_frame").attr( "src", alt1d);
+						$("#guide-text").addClass( "hide" ); 
 					}
 				}
 			}if(current_size == "5.75x4.25"){
@@ -80,8 +91,10 @@ if(defaultLayout == '5.75x4.25'){
 
 					if($('#guide-select').is(':checked')) {
 					$("#pfapp_photo_frame").attr( "src", alt4 );
+					$("#guide-text").removeClass( "hide" );
 					}else{
 						$("#pfapp_photo_frame").attr( "src", alt2 );
+						$("#guide-text").addClass( "hide" ); 
 					}
 				} 
 				if($('#example-dark').is(':checked')) {
@@ -90,12 +103,15 @@ if(defaultLayout == '5.75x4.25'){
 
 					if($('#guide-select').is(':checked')) {
 						$("#pfapp_photo_frame").attr( "src", alt4d);
+						$("#guide-text").removeClass( "hide" );
 					}else{
 						$("#pfapp_photo_frame").attr( "src", alt2d);
+						$("#guide-text").addClass( "hide" ); 
 					}
 				}			
 			}		             
 	}
+	
 
 setTimeout(function() { exampleImage(); }, 100);
 
@@ -419,7 +435,11 @@ $.fancybox.open([
 
 	.fancybox-wrap{top: 100px !important;}
 
-	#guide-box{padding: 30px; text-align: center;}
+	#guide-box{padding: 30px; text-align: center; padding:20px; margin: 10px 40px; background-color: #f8f8f8;}
+	#guide-box label {display: block; cursor: pointer;}
+	#guide-text p{font-size:12px; text-align: left; }
+	.p3{background:url(https://www.cardsandpockets.com/images/icons/16-message-warn2.png) no-repeat 4px 8px #FFEDD6; padding:8px 8px 8px 25px; font-size:11px;}
+	.p4{background:url(https://www.cardsandpockets.com/images/icons/16-message-info.png) no-repeat 4px 8px #E9F0F7; padding:8px 8px 8px 25px; font-size:11px;}
 
 </style>
 
@@ -475,8 +495,7 @@ $.fancybox.open([
 	</div>
 
 <div style="width: 500px; display: none;" id="inline4">
-		<p>This design features a “light” and “dark” visualization so that you can get a sense of how light or dark text will contrast against your photo.</p>
-		<p> It is important to <em>choose colors in the drop-down that will print well to show up against your unique photo</em>. For example, light colors will show up better against a dark background, but darker colors should be selected if you have a light background.
+		<p>*This design features a “light” and “dark” visualization so that you can get a sense of how light or dark text will contrast against your photo. It is important to choose colors in the drop-down that will print well to show up against your unique photo. Light colors will show up better against a dark background, and darker colors should be selected if you have a light background.</p>
 		</p>
 		<a href="#" class="fncy-custom-close" >
 		    <span class="newButton3">I Understand</span>
@@ -507,8 +526,12 @@ $.fancybox.open([
 	        <?php //SHOWS GUIDES ON ALL BUT 3 OF THE STD's
 	         	$pageNum = substr($images_folder, 1, 7);
 	         	if($pageNum != 'frame23' && $pageNum != 'frame22' && $pageNum != 'frame08')
-	         		echo '<div id="guide-box"><input type="checkbox" value="show-guides" id="guide-select" checked> Show Guides</div>';
+	         		//echo '<div id="guide-box"><input type="checkbox" value="show-guides" id="guide-select" checked> Show Guides</div>';
+	         	include 'guides.php';
 	         ?>
+
+	         <div id="photo-text" class="hide p3" style="font-size:14px; margin: 0px 60px;"><b>Please note that the above image will not change to reflect your text and color choices.</b>
+	          <p>Our designers will create a custom file for you based on your colors, text, and photo once you submit the file to the print shop. We recommend ordering a proof to see how your customizations will look in print.</p></div>
 	         
 	        <div id="pfapp_frame_title" style="display:none;"></div>
 	        <div id="pfapp_photo_tools" style="display:none;">
@@ -530,7 +553,9 @@ $.fancybox.open([
 
 
 		<h3>Hi There</h3>
-		<p>Welcome to this great photo placement uploader, this is a great see how you would want your photo cropped for a save the date</p>
+		<p>To see how your personal photo looks with this design, just upload and use the placement and zoom tools. The red and blue guidelines will help you place your photo. </p>
+
+<p class="p4" style="font-size:12px; line-height:140%;">Please note that there is some slight variance in cutting and final cut pieces may not be cut in the exact place as your screen image.We recommend ordering a proof to see how your customizations will look in print.</p>
 	            <div class="field">
 	            		<input type="checkbox" id="matchproof" name="matchproof" value="<?PHP printValue('MatchProof'); ?>"> <a href="#" class="tips tipOne"  title="title">Please use file from previous order </a>
 	            		
