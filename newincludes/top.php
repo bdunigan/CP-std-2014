@@ -131,6 +131,8 @@ $( "#guide-select" ).change(function() {
 
 $('#paperSelect').change(function() {
 	var paperSelected = $(this).val();
+	var price = $('#priceTxt span').html();
+	console.log(price);
 		if(paperSelected == 'heavy-white'){
 			$("#variationid").attr( "value", '64885' );
 			$("#proofvariationid").attr( "value", '64899' );
@@ -509,7 +511,7 @@ $.fancybox.open([
 	         	if($pageNum != 'frame23' && $pageNum != 'frame22' && $pageNum != 'frame08')
 	         		echo '<div id="guide-box"><input type="checkbox" value="show-guides" id="guide-select" checked> Show Guides</div>';
 	         ?>
-	         
+
 	        <div id="pfapp_frame_title" style="display:none;"></div>
 	        <div id="pfapp_photo_tools" style="display:none;">
 	        	<div id="pfapp_fit_photo" class="newButton">Fit to Frame</div>
