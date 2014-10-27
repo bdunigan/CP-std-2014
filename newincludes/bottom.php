@@ -32,7 +32,7 @@
 		   		</div>
 
 	            <div class="field" style="margin-top:20px;">
-	            	<h3 id="priceTxt" style="margin-bottom:0px;">Retail Price: <span style="font-size:18px;">$ 0.35</span></h3>
+	            	<h3 id="priceTxt" style="margin-bottom:0px;">Retail Price: <span style="font-size:18px;">$18.95</span> per 25 pack</h3>
 	            	<label for="pfapp_email">Quantity</label>
 	                <input type="text" name="qty" id="pfapp_qty" class="input" style="width:50px; margin-right:10px;">
 	                <div id="buyBtns" class="newButton2" > Place Full Order</div> 

@@ -22,6 +22,7 @@ $("document").ready(function() {
 		$('#guide-select').attr('checked', false);
 		exampleImage();
 		$('#photo-text').toggleClass( "hide" );
+		$('#guide-box').toggleClass( "hide" );
 		
 
 		//if checked set the values to blank
@@ -40,6 +41,7 @@ $("document").ready(function() {
 		$('#pfapp_photo_tools').removeClass( "hideDiv" );	
 		exampleImage();
 		$('#photo-text').toggleClass( "hide" );
+		$('#guide-box').toggleClass( "hide" );
 
 
 	});
@@ -530,7 +532,7 @@ $.fancybox.open([
 	         	include 'guides.php';
 	         ?>
 
-	         <div id="photo-text" class="hide p3" style="font-size:14px; margin: 0px 60px;"><b>Please note that the above image will not change to reflect your text and color choices.</b>
+	         <div id="photo-text" class="hide p3" style="font-size:14px; margin: 20px 60px;"><b>Please note that the above image will not change to reflect your text and color choices.</b>
 	          <p>Our designers will create a custom file for you based on your colors, text, and photo once you submit the file to the print shop. We recommend ordering a proof to see how your customizations will look in print.</p></div>
 	         
 	        <div id="pfapp_frame_title" style="display:none;"></div>

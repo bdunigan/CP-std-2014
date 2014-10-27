@@ -108,7 +108,7 @@ if ($_SESSION['current_image'] != '') {
 	/* end SMTP setup */
 
 	$mail->FromName = 'Save The Date Wizard';	// from name
-	$mail->AddAddress('andy@cardsandpockets.com', 'CP Photos');  // Add a recipient
+	$mail->AddAddress('bryan@cardsandpockets.com', 'CP Photos');  // Add a recipient
 	$mail->AddAttachment($file);    // Adding the pdf file
 	
 	$mail->IsHTML(true);

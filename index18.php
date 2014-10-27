@@ -262,7 +262,7 @@
 
 
 <!--////////////// Choose Selected Example///////-->
-<div class="field" id="select-example">
+<div class="field hide" id="select-example">
 	<label for="select-example" >Example Shown: <br/></label>
 
 	<input type="radio" name="example" valone="<?php echo $alt1;?>" valtwo="<?php echo $alt2;?>" valthree="<?php echo $alt3;?>" valfour="<?php echo $alt4;?>" id="example-light"  >Light Example<br>
