@@ -156,7 +156,4 @@ else{
 	   exit;
 	}
 	
-	//header('location: thanks.php');
-	print '<script type="text/javascript">'; 
-	print 'alert("Horray! The Print Shop has been notified of your order. \n Please checkout to complete order.");'; 
-	print '</script>'; 
+	header('location: thanks.php');

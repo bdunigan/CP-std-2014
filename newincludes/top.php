@@ -5,8 +5,6 @@
 
 //------------Bryans New Script
 $("document").ready(function() {
-
-
 	$("#buttonStart").click(function() {
 		$('#frameTwo').removeClass( "hideDiv" );
 		$('#frameOne').addClass( "hideDiv" );

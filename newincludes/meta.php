@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Picture Frame</title>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+ <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
 
 <!--adding cluetip-->
 <link href="css/jquery.cluetip.css" rel="stylesheet" type="text/css" />
@@ -11,8 +11,8 @@
 
 
 <link rel="stylesheet" type="text/css" href="css/pdff_style.css">
-<script type="text/javascript" src="js/ng/1.1.5/ng_all.js"></script>
-<script type="text/javascript" src="js/ng/1.1.5/components/slider.js"></script>
+<script type="text/javascript" src="js/ng/1.2.2/ng_all.js"></script>
+<script type="text/javascript" src="js/ng/1.2.2/components/slider.js"></script>
 
 <!--adding fancybox-->
 <link rel="stylesheet" type="text/css" href="http://cardsandpockets.dreamhosters.com/pfwizard/css/jquery.fancybox.css" media="screen" />
